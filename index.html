@@ -18,6 +18,7 @@
             position: relative;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
+
         .container {
             width: calc(100% - 6rem); /* Vähem laiem kui varem */
             height: calc(100% - 6rem); /* Vähem kõrgem kui varem */
@@ -53,8 +54,7 @@
             text-decoration: underline;
         }
         .left-side {
-            width: 40%; /* Vasaku poole ristküliku laius */
-      
+            width: 50%; /* Vasaku poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
             padding: 2rem;
             position: relative; /* Animatsiooni paigutamiseks */
@@ -74,13 +74,17 @@
         }
         .animation-placeholder {
             width: 50%; /* Vähendame laiust, et see ei võtaks üle poole */
-            background-color: #002244; /* Näitamiseks tume sinine */
+            height: 100%; /* Täiskõrgus */
             border-radius: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Varju lisamine */
-            height: 100%;
             position: absolute;
             top: 0;
             right: 0; /* Positsioneerime paremale */
+        }
+        .animation-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1rem;
         }
     </style>
 </head>
@@ -98,10 +102,9 @@
                 Olen kogenud professionaal, kellel on terav silm detailide suhtes ja kirg visuaalselt rabavate kujunduste loomise vastu, mis aitavad teie ettevõttel silma paista.
             </p>
         </div>
-        <div id="html5-banner">
-<object type="text/html" data="sport/sport.html" width="250" height="250"></object>
-	
-</div>	
+        <div class="animation-placeholder">
+            <iframe src="veebilehele/veebilehele.html"></iframe>
+        </div>
     </div>
     <div class="footer">
         <a href="#">Kontakt</a>
