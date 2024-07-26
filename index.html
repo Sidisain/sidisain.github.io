@@ -71,8 +71,8 @@
             font-weight: 400; /* Tavaline font */
             line-height: 1.6; /* Ridade kõrgus */
         }
- .right-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
+        .right-side {
+            width: 50%; /* Parema poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
             padding: 2rem;
             display: flex;
@@ -81,11 +81,18 @@
         }
 
         #html5-banner {
-		 display: flex;
-  justify-content: center;
-    margin-bottom: 2em; 
-	margin-top: 3em;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2em; 
+            margin-top: 3em;
         }    
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -103,11 +110,11 @@
             </p>
         </div>
         <div class="right-side">
-		<div id="html5-banner">
-            <object type="text/html" data="veebilehele/veebilehele.html" width="100%" height="100%"></object>
-			</div>
+            <div id="html5-banner">
+                <iframe src="veebilehele/veebilehele.html"></iframe>
+            </div>
+        </div>
     </div>
-	     </div>
     <div class="footer">
         <a href="#">Kontakt</a>
         <a href="#">Minust</a>
