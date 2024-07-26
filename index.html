@@ -57,7 +57,6 @@
             width: 50%; /* Vasaku poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
             padding: 2rem;
-            position: relative; /* Animatsiooni paigutamiseks */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,11 +75,12 @@
             width: 50%; /* Vähendame laiust, et see ei võtaks üle poole */
             height: 100%; /* Täiskõrgus */
             border-radius: 1rem;
-            position: absolute;
-            top: 0;
-            right: 0; /* Positsioneerime paremale */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .animation-placeholder iframe {
+        .animation-placeholder object {
             width: 100%;
             height: 100%;
             border: none;
@@ -103,7 +103,7 @@
             </p>
         </div>
         <div class="animation-placeholder">
-            <iframe src="veebilehele/veebilehele.html"></iframe>
+            <object type="text/html" data="veebilehele/veebilehele.html" width="100%" height="100%"></object>
         </div>
     </div>
     <div class="footer">
