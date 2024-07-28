@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self'; frame-src 'self';">
+    <title>Test Bänner</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #003B5C;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .container {
+            width: 80%;
+            height: 80%;
+            background-color: #001528;
+            border-radius: 2rem;
+            box-sizing: border-box;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe src="veebilehele/veebilehele.html" width="500" height="500" style="border: none;"></iframe>
+    </div>
+</body>
+</html>
