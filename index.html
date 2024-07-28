@@ -6,13 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self'; 
-        script-src 'self' 'unsafe-eval'; 
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-        font-src 'self' https://fonts.gstatic.com; 
-        object-src 'self';
-    ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'self'; child-src 'self'">
     <title>Sidisain Veebileht</title>
     <style>
         body {
@@ -79,7 +73,7 @@
             line-height: 1.6; /* Ridade kõrgus */
         }
         .right-side {
-            width: 60%; /* Parema poole ristküliku laius */
+            width: 50%; /* Parema poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
             padding: 2rem;
             display: flex;
@@ -90,10 +84,16 @@
         #html5-banner {
             display: flex;
             justify-content: center;
-    
+            width: 100%;
+            height: 100%;
+        }
+
+        #html5-banner object {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1rem;
         }    
-
-
     </style>
 </head>
 <body>
@@ -112,8 +112,8 @@
         </div>
         <div class="right-side">
             <div id="html5-banner">
-<object type="text/html" data="veebilehele/veebilehele.html" width="500" height="500"></object>
-	</div>
+                <object type="text/html" data="veebilehele/veebilehele.html" width="500" height="500"></object>
+            </div>
         </div>
     </div>
     <div class="footer">
