@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Sidisain Veebileht</title>
     <style>
-       body {
+     body {
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -22,18 +22,19 @@
 .outer-container {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Piirame maksimaalset laiust */
-    padding: 1rem; /* Padding heledama äärte jaoks */
-    background-color: #003B5C; /* Taustavärv heledama äärena */
+    height: 100%;
+    padding: 2rem; /* Täiendav padding heledama äärte jaoks */
     box-sizing: border-box;
+    background-color: #003B5C; /* Taustavärv heledama äärena */
 }
 
 .container {
     background-color: #001528; /* Tumesinine taust */
     border-radius: 1rem; /* Ümardatud nurgad */
-    padding: 2rem;
+    padding: 0; /* Eemaldame paddingu */
     box-sizing: border-box;
     overflow: hidden;
+    max-width: 100%; /* Veendume, et konteiner on 100% laiusest */
 }
 
 .image-grid {
@@ -57,8 +58,8 @@
 
 .menu {
     position: absolute;
-    top: 1rem;
-    left: 1rem; /* Kohanda vastavalt vajadusele */
+    top: 2rem; /* Kohandatud positsioon */
+    left: 2rem; /* Kohandatud positsioon */
     display: flex;
     gap: 1rem;
     z-index: 10; /* Et menüü oleks sisu kohal */
@@ -77,8 +78,8 @@
 
 .footer {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem; /* Kohanda vastavalt vajadusele */
+    bottom: 2rem; /* Kohandatud positsioon */
+    left: 2rem; /* Kohandatud positsioon */
     color: #87CEFA; /* Heledam sinine tekst */
     font-family: 'Montserrat', sans-serif;
     z-index: 10; /* Et jalus oleks sisu kohal */
@@ -95,6 +96,8 @@
 .footer a:hover {
     color: #c0ac8e; /* Hover-efekt */
 }
+
+
 
 
  /* CSS-kood siia */
