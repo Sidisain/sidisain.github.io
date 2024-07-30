@@ -38,7 +38,7 @@
     box-sizing: border-box;
     overflow: hidden;
     width: 100%;
-   z-index: 2;
+   z-index: 1;
 }
 
 .image-grid {
@@ -54,7 +54,7 @@
     height: auto;
     border-radius: 0.5rem; /* Ümardatud nurgad */
     transition: transform 0.2s ease;
-    z-index: 2;
+    z-index: 1;
 }
 
 .image-grid img:hover {
@@ -73,7 +73,8 @@
     min-height: 100%;
     overflow: hidden; /* Väldib menüüpunktide ületamist */
     padding-bottom: 0.5rem !important;
- z-index: 1 !important;
+ z-index: 2 !important;
+    pointer-events: none; /* Muudab menüü läbipaistvaks, kuid klikitavaks */
 }
 
 .menu a {
@@ -81,13 +82,15 @@
     font-size: 1.2em;
     text-decoration: none;
     font-weight: 500;
+     z-index: 3 !important;
+    pointer-events: auto; /* Taastab klikitavuse menüü linkidele */
 }
 
 .menu a:hover {
     color: #c0ac8e; /* Hover-efekt */
 }
         .dropdown {
-          
+          pointer-events: auto; /* Taastab klikitavuse menüü linkidele */
             z-index: 3 !important; /* Tähtsam kui pildid ja menüü */
         }
 
