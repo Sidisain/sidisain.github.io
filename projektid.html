@@ -9,40 +9,63 @@
    
     <title>Sidisain Veebileht</title>
     <style>
-        body {
+         body {
             margin: 0;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #003B5C; /* Tumeroheline sinine */
+            position: relative;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
 
-          .container {
+        .container {
             width: calc(100% - 6rem); /* Vähem laiem kui varem */
             background-color: #001528; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
-            padding: 3rem 2rem 5rem 2rem; /* Rohkem paddingut üla- ja alaservas */
+            padding: 3rem 2rem 3rem 2rem; /* Rohkem paddingut üla- ja alaservas */
+            overflow: hidden; /* Tagame, et pildid ei läheks konteinerist välja */
         }
 
         .image-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem; /* Piltide vahe */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
         }
-        
+
         .image-grid img {
-            width: 100%;
+            width: calc(33.33% - 2rem);
             height: auto;
             transition: transform 0.2s ease;
             border-radius: 1rem; /* Ümardatud nurgad */
         }
-        
+
         .image-grid img:hover {
             cursor: pointer;
-            transform: scale(1.05); /* Suurendame vähem */
+            transform: scale(1.1);
+        }
+
+        .menu {
+            position: absolute;
+            top: 1rem;
+            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime menüü heledama sinise ala peale */
+            display: flex;
+            padding-bottom: 2rem;
+        }
+
+        .menu a {
+            padding: 0 1.5rem;
+            color: #87CEFA; /* Heledam sinine */
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: #c0ac8e; /* Hover-efekt */
         }
 
         .footer {
@@ -50,17 +73,18 @@
             bottom: 1rem;
             left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime jaluse heledama sinise ala peale */
             color: #87CEFA; /* Heledam sinine tekst */
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
         }
-        
+
         .footer a {
             color: #87CEFA; /* Heledam sinine tekst */
             text-decoration: none;
             margin-right: 3rem;
             font-size: 1.2em;
+            text-decoration: none;
             font-weight: 500;
         }
-        
+
         .footer a:hover {
             color: #c0ac8e; /* Hover-efekt */
         }
