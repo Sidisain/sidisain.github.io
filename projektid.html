@@ -9,105 +9,97 @@
     <title>Sidisain Veebileht</title>
     <style>
         body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #003B5C; /* Tumeroheline sinine */
-            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
-            position: relative;
-        }
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #003B5C; /* Tumeroheline sinine */
+    font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+    position: relative;
+}
 
-        .outer-container {
-            position: relative;
-            width: calc(100% - 6rem); /* Terve laius, jättes heledama ääre */
-            background-color: #003B5C; /* Taustavärv heledama äärena */
-            padding: 3rem; /* Padding heledama äärte jaoks */
-            box-sizing: border-box;
-        }
+.outer-container {
+    position: relative;
+    width: calc(100% - 2rem); /* Vähem heledama ääre laius, et saada piisavalt ruumi */
+    max-width: 1200px; /* Piirame maksimaalset laiust */
+    background-color: #003B5C; /* Taustavärv heledama äärena */
+    padding: 1rem; /* Padding heledama äärte jaoks */
+    box-sizing: border-box;
+}
 
-        .container {
-            width: 100%;
-            max-width: 1200px; /* Või sobiv maksimaalne laius */
-            background-color: #001528; /* Tumesinine taust */
-            border-radius: 2rem; /* Ümardatud nurgad */
-            padding: 2rem;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
+.container {
+    width: 100%;
+    background-color: #001528; /* Tumesinine taust */
+    border-radius: 1rem; /* Ümardatud nurgad */
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative; /* Et saaksime menüü ja jaluse õigesti paigutada */
+}
 
-        .image-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Tõukame pildid üksteisest kaugemale */
+    gap: 1rem; /* Ruumi piltide vahele */
+}
 
-        .image-grid img {
-            width: calc(33.33% - 2rem);
-            height: auto;
-            transition: transform 0.2s ease;
-            border-radius: 1rem; /* Ümardatud nurgad */
-        }
+.image-grid img {
+    width: calc(33.33% - 1rem); /* Vähemalt 1rem vahe piltide vahel */
+    height: auto;
+    border-radius: 0.5rem; /* Ümardatud nurgad */
+    transition: transform 0.2s ease;
+}
 
-        .image-grid img:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-        }
+.image-grid img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
 
-        .menu {
-            position: absolute;
-            top: 1rem;
-            left: 3rem; /* Kohanda vastavalt vajadusele */
-            display: flex;
-            gap: 1rem;
-        }
+.menu {
+    position: absolute;
+    top: 1rem;
+    left: 1rem; /* Kohanda vastavalt vajadusele */
+    display: flex;
+    gap: 1rem;
+    z-index: 10; /* Et menüü oleks sisu kohal */
+}
 
-        .menu a {
-            color: #87CEFA; /* Heledam sinine */
-            font-size: 1.2em;
-            text-decoration: none;
-            font-weight: 500;
-        }
+.menu a {
+    color: #87CEFA; /* Heledam sinine */
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-        .menu a:hover {
-            color: #c0ac8e; /* Hover-efekt */
-        }
+.menu a:hover {
+    color: #c0ac8e; /* Hover-efekt */
+}
 
-        .footer {
-            position: absolute;
-            bottom: 1rem;
-            left: 3rem; /* Kohanda vastavalt vajadusele */
-            color: #87CEFA; /* Heledam sinine tekst */
-            font-family: 'Montserrat', sans-serif;
-        }
+.footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem; /* Kohanda vastavalt vajadusele */
+    color: #87CEFA; /* Heledam sinine tekst */
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10; /* Et jalus oleks sisu kohal */
+}
 
-        .footer a {
-            color: #87CEFA; /* Heledam sinine tekst */
-            text-decoration: none;
-            margin-right: 3rem;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
+.footer a {
+    color: #87CEFA; /* Heledam sinine tekst */
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1.2em;
+    font-weight: 500;
+}
 
-        .footer a:hover {
-            color: #c0ac8e; /* Hover-efekt */
-        }
+.footer a:hover {
+    color: #c0ac8e; /* Hover-efekt */
+}
 
-        .logo-container {
-            min-width: 80%;
-            max-width: 80%; /* Logo maksimaalne laius */
-            height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
-            display: flex;
-            align-items: center;
-            padding-bottom: 3rem;
-        }
 
-        .logo-container img {
-            padding-bottom: 3rem;
-        }
     </style>
 </head>
 <body>
