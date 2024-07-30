@@ -38,6 +38,7 @@
     box-sizing: border-box;
     overflow: hidden;
     width: 100%;
+    z-index: 1;
 }
 
 .image-grid {
@@ -68,11 +69,10 @@
      flex-wrap: nowrap; /* Tagab, et menüüpunktid ei lähe uuele reale */
     gap: 1rem; /* Vajadusel reguleeri tühikut menüüpunktide vahel */
     min-width: 100%; /* Tagab, et menüü võtab piisavalt ruumi */
-    min-height: 3rem;
-    max-height: 100%;
+    min-height: 100%m;
     overflow: hidden; /* Väldib menüüpunktide ületamist */
     padding-bottom: 0.5rem !important;
-
+ z-index: 10;
 }
 
 .menu a {
