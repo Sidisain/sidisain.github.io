@@ -19,30 +19,6 @@
             position: relative;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
- .image-grid-container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .image-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .image-grid img {
-      width: calc(33.33% - 5rem); /* Increase the width of the images */
-      height: auto;
-      margin: 2rem;
-      transition: transform 0.2s ease;
-border: 2rem;
-      
-    }
-    
-    .image-grid img:hover {
-    	cursor: pointer;
-      transform: scale(1.1);
-    }
 
         .container {
             width: calc(100% - 6rem); /* Vähem laiem kui varem */
@@ -52,8 +28,25 @@ border: 2rem;
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
             padding: 2rem;
             display: flex;
+            justify-content: center;
             align-items: center;
-            position: relative; /* Animatsiooni paigutamiseks */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+        
+        .image-grid img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
         }
 
         .footer {
@@ -62,122 +55,49 @@ border: 2rem;
             left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime jaluse heledama sinise ala peale */
             color: #87CEFA; /* Heledam sinine tekst */
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-           
         }
         
         .footer a {
             color: #87CEFA; /* Heledam sinine tekst */
             text-decoration: none;
             margin-right: 3rem;
-             font-size: 1.2em;
-            text-decoration: none;
+            font-size: 1.2em;
             font-weight: 500;
         }
         
         .footer a:hover {
-          color: #c0ac8e; /* Hover-efekt */
+            color: #c0ac8e; /* Hover-efekt */
         }
 
-        .left-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
-            color: #ffffff; /* Tekstivalge */
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .left-side h1 {
-            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-            font-weight: 700; /* Rasvane font */
-            margin: 0 0 0rem 0; /* Väike vahe pealkirja alla */
-        }
-        
-        .left-side p {
-            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-            font-weight: 400; /* Tavaline font */
-            line-height: 1.6; /* Ridade kõrgus */
-        }
-        
-        .right-side {
-            min-height: 500px;
-            width: 50%; /* Parema poole ristküliku laius */
-            color: #ffffff; /* Tekstivalge */
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #html5-banner {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        #html5-banner object {
-            min-width: 500px;
-            min-height: 500px;
-            border: none;
-            border-radius: 3rem;
-        }
-         .logo-container {
-              min-width: 80%;
-            max-width: 80%; /* Logo maksimaalne laius */
-              height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
-            display: flex;
-            align-items: center;
-             padding-bottom: 3rem;
-        }
-
-        .logo-container img {
-           padding-bottom: 3rem;
-            
-        }
     </style>
 </head>
 <body>
     <div id="menu-placeholder"></div>
     <div class="container">
-
-	  <div class="image-grid">
-      <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
-      <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
-      <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
+        <div class="image-grid">
+            <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
+            <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
+            <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
+            <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
+            <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
+            <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
+            <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
+            <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
+            <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
+            <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
+            <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
+            <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
+            <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
+            <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
+            <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
+            <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
+            <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
+            <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
+            <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
+            <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
+            <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
+        </div>
     </div>
-	   <div class="image-grid">
-      <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
-      <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
-      <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
-    </div>
-<div class="image-grid">
-      <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
-      <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
-      <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
-    </div>
-    <div class="image-grid">
-      <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
-      <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
-      <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
-    </div>
-    <div class="image-grid">
-      <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
-      <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
-      <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
-    </div>
-    <div class="image-grid">
-    <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
-      <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
-      <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
-	</div>
-    <div class="image-grid">
-    <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
-      <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
-      <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
-    </div>
-  </div>
-            </div>
     <div class="footer">
         <a href="#">Kontakt</a>
         <a href="#">Minust</a>
