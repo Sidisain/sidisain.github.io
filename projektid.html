@@ -20,7 +20,7 @@
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
 
-        .container {
+          .container {
             width: calc(100% - 6rem); /* Vähem laiem kui varem */
             height: calc(100% - 6rem); /* Vähem kõrgem kui varem */
             background-color: #001528; /* Tumesinine taust */
@@ -35,21 +35,21 @@
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1rem; /* Piltide vahe */
+            width: 100%;
         }
         
         .image-grid img {
             width: 100%;
             height: auto;
             transition: transform 0.2s ease;
-         border: 2rem;
+            border-radius: 0.5rem; /* Ümardatud nurgad */
         }
         
         .image-grid img:hover {
             cursor: pointer;
-            transform: scale(1.1);
+            transform: scale(1.05); /* Suurendame vähem */
         }
-
         .footer {
             position: absolute;
             bottom: 1rem;
