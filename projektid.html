@@ -6,77 +6,154 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   
     <title>Sidisain Veebileht</title>
     <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #003B5C; /* Tumeroheline sinine */
+            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+            position: relative;
+        }
+
+        .outer-container {
+            position: relative;
+            width: calc(100% - 6rem); /* Terve laius, jättes heledama ääre */
+            background-color: #003B5C; /* Taustavärv heledama äärena */
+            padding: 3rem; /* Padding heledama äärte jaoks */
+            box-sizing: border-box;
+        }
+
         .container {
-    width: calc(100% - 6rem);
-    background-color: #001528;
-    border-radius: 2rem;
-    box-sizing: border-box;
-    padding: 3rem 2rem 5rem 2rem;
-    overflow: hidden;
-}
+            width: 100%;
+            max-width: 1200px; /* Või sobiv maksimaalne laius */
+            background-color: #001528; /* Tumesinine taust */
+            border-radius: 2rem; /* Ümardatud nurgad */
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #003B5C;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-}
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
 
-.menu {
-    position: absolute;
-    top: 1rem;
-    left: calc((100% - 100vw) / 2 + 4rem);
-    display: flex;
-    padding-bottom: 2rem;
-}
+        .image-grid img {
+            width: calc(33.33% - 2rem);
+            height: auto;
+            transition: transform 0.2s ease;
+            border-radius: 1rem; /* Ümardatud nurgad */
+        }
 
-.footer {
-    position: absolute;
-    bottom: 1rem;
-    left: calc((100% - 100vw) / 2 + 4rem);
-    color: #87CEFA;
-    font-family: 'Montserrat', sans-serif;
+        .image-grid img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .menu {
+            position: absolute;
+            top: 1rem;
+            left: 3rem; /* Kohanda vastavalt vajadusele */
+            display: flex;
+            gap: 1rem;
+        }
+
+        .menu a {
+            color: #87CEFA; /* Heledam sinine */
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 1rem;
+            left: 3rem; /* Kohanda vastavalt vajadusele */
+            color: #87CEFA; /* Heledam sinine tekst */
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer a {
+            color: #87CEFA; /* Heledam sinine tekst */
+            text-decoration: none;
+            margin-right: 3rem;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .logo-container {
+            min-width: 80%;
+            max-width: 80%; /* Logo maksimaalne laius */
+            height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
+            display: flex;
+            align-items: center;
+            padding-bottom: 3rem;
+        }
+
+        .logo-container img {
+            padding-bottom: 3rem;
         }
     </style>
 </head>
 <body>
-    <div id="menu-placeholder"></div>
-    <div class="container">
-        <div class="image-grid">
-            <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
-            <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
-            <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
-            <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
-            <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
-            <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
-            <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
-            <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
-            <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
-            <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
-            <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
-            <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
-            <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
-            <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
-            <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
-            <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
-            <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
-            <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
-            <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
-            <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
-            <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
+    <div class="outer-container">
+        <div id="menu-placeholder" class="menu"></div>
+        <div class="container">
+            <div class="image-grid">
+                <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
+                <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
+                <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
+                <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
+                <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
+                <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
+                <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
+                <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
+                <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
+                <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
+                <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
+                <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
+                <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
+            </div>
+            <div class="image-grid">
+                <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
+                <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
+                <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
+            </div>
         </div>
-    </div>
-    <div class="footer">
-        <a href="#">Kontakt</a>
-        <a href="#">Minust</a>
+        <div class="footer">
+            <a href="#">Kontakt</a>
+            <a href="#">Minust</a>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
