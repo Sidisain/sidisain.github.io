@@ -32,28 +32,24 @@
             position: relative; /* Animatsiooni paigutamiseks */
         }
 
-        .menu, .footer {
-            position: absolute;
-            color: #87CEFA; /* Heledam sinine tekst */
-        }
-        .menu {
-            top: 1rem;
-            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime menüü heledama sinise ala peale */
-            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-        }
         .footer {
+            position: absolute;
             bottom: 1rem;
             left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime jaluse heledama sinise ala peale */
+            color: #87CEFA; /* Heledam sinine tekst */
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
         }
-        .menu a, .footer a {
+        
+        .footer a {
             color: #87CEFA; /* Heledam sinine tekst */
             text-decoration: none;
             margin-right: 3rem;
         }
-        .menu a:hover, .footer a:hover {
+        
+        .footer a:hover {
             text-decoration: underline;
         }
+
         .left-side {
             width: 50%; /* Vasaku poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
@@ -62,18 +58,21 @@
             flex-direction: column;
             justify-content: center;
         }
+        
         .left-side h1 {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700; /* Rasvane font */
             margin: 0 0 0rem 0; /* Väike vahe pealkirja alla */
         }
+        
         .left-side p {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 400; /* Tavaline font */
             line-height: 1.6; /* Ridade kõrgus */
         }
+        
         .right-side {
-              min-height: 500px;
+            min-height: 500px;
             width: 50%; /* Parema poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
             padding: 2rem;
@@ -94,15 +93,11 @@
             min-height: 500px;
             border: none;
             border-radius: 3rem;
-        }    
+        }
     </style>
 </head>
 <body>
-    <div class="menu">
-        <a href="#">Projektid</a>
-        <a href="#">Liikuv graafika</a>
-        <a href="#">Tootefotod</a>
-    </div>
+    <div id="menu-placeholder"></div>
     <div class="container">
         <div class="left-side">
             <h1>Tere tulemast Sidisain veebilehele,</h1>
@@ -121,5 +116,14 @@
         <a href="#">Kontakt</a>
         <a href="#">Minust</a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-placeholder').innerHTML = data;
+                });
+        });
+    </script>
 </body>
 </html>
