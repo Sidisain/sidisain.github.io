@@ -99,16 +99,17 @@
             border-radius: 3rem;
         }
          .logo-container {
-            width: 50%;
+              min-width: 100%;
+            max-width: 100%; /* Logo maksimaalne laius */
+              height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
             display: flex;
             align-items: center;
-             bottom: 3rem;
+             padding-bottom: 3rem;
         }
 
         .logo-container img {
-            min-width: 100%;
-            max-width: 100%; /* Logo maksimaalne laius */
-            height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
+           padding-bottom: 3rem;
+            
         }
     </style>
 </head>
