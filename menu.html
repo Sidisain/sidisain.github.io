@@ -4,87 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .menu {
             position: absolute;
             top: 1rem;
-            left: calc((100% - 100vw) / 2 + 4rem); 
-            font-family: 'Montserrat', sans-serif;
-            color: #87CEFA;
-        }
-
-        .menu a {
-            color: #87CEFA;
-            text-decoration: none;
-            margin-right: 3rem;
-        }
-
-        .menu a:hover {
-            color: #c0ac8e !important;
-        }
-
-        .dropdown {
-          
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            background-color: #001528;
-            color: #87CEFA !important;
-            display: none;
-            position: absolute;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            background-color: #001528;
-            color:  ##87CEFA !important;
-            padding: 3rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-            text-decoration: none;
-            display: block;
-            font-size: 0.8em;
-        }
-
-        .dropdown-content a:hover {
-            color: #c0ac8e !important; 
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: #003463;
-        }
-
-        .container {
-            max-width: 100%;
-            padding-bottom: 50px;
-        }
-
-        .menu-container {
+            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime menüü heledama sinise ala peale */
             display: flex;
-            justify-content: center !important;
-            padding-bottom: 3rem;
-        }
-
-        .menu {
-            display: flex;
-            justify-content: center;
             padding-bottom: 2rem;
         }
 
         .menu a {
             padding: 0 1.5rem;
-            color: #003463;
+            color: #87CEFA; /* Heledam sinine */
             font-size: 1.2em;
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            background-color: #87CEFA; /* Heledam sinine taust */
+            color: #003463; /* Tumeroheline tekst */
+            display: none;
+            position: absolute;
+            z-index: 1;
+            padding: 1rem 0;
+            border-radius: 0.5rem; /* Veidi ümardatud nurgad */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Väike vari */
+        }
+
+        .dropdown-content a {
+            background-color: transparent; /* Eemaldab taustavärvi */
+            color: #003463; /* Tumeroheline tekst */
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            text-decoration: none;
+            display: block;
+            font-size: 0.8em;
+            border-radius: 0.5rem; /* Veidi ümardatud nurgad */
+        }
+
+        .dropdown-content a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
