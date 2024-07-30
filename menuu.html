@@ -1,50 +1,113 @@
-<!-- menu.html -->
-<div class="menu">
-  <div class="dropdown">
-    <a href="#" onclick="setMenu('projects');">Projektid</a>
-    <div class="dropdown-content">
-	    <a href="https://siljaportfoolio.github.io/walkers.html">Walkers turundusmaterjalid</a>
-        <a href="https://siljaportfoolio.github.io/foto.html">Loosimängu kujundused</a>
-        <a href="https://siljaportfoolio.github.io/livinit.html">Livinit mallid</a>
-	    <a href="https://siljaportfoolio.github.io/kihulane.html">Kihulane logo, etikett</a>
-        <a href="https://siljaportfoolio.github.io/oakohv.html">OA kohv</a>
-        <a href="https://siljaportfoolio.github.io/handles1.html">Handles bränding</a>
-      <a href="https://siljaportfoolio.github.io/soomoreklaam.html">Soomo turundusmaterjalid</a>
-    <a href="https://siljaportfoolio.github.io/kvklogo.html">KVK logo ja CVI </a>
-        <a href="https://siljaportfoolio.github.io/car24.html">Car24 logo</a>
-        <a href="https://siljaportfoolio.github.io/sidisain.html">Sidisain logo</a>
-        <a href="https://siljaportfoolio.github.io/soomologo.html">Soomo logo ja CVI </a>
-        <a href="https://siljaportfoolio.github.io/ajakiri.html">Soomo ajakiri</a>
-        <a href="https://siljaportfoolio.github.io/iluelab.html">Ilu Elab turundusmaterjalid</a>
-        <a href="https://siljaportfoolio.github.io/taimeapp.html">Taime rakendus</a>
-        <a href="https://siljaportfoolio.github.io/poster.html">Deep Summer Fest poster</a>
-        <a href="https://siljaportfoolio.github.io/joulukaart.html">KAK jõulukaart</a>
-        <a href="https://siljaportfoolio.github.io/maakodu.html">Maakodu kaanelahendus</a>
-        <a href="https://siljaportfoolio.github.io/kalender.html">Lauakalender</a>
-        <a href="https://siljaportfoolio.github.io/bons.html">Böns pakend</a>
-	      <a href="https://siljaportfoolio.github.io/kaijala.html">Käi jala kampaania</a>
-        <a href="https://siljaportfoolio.github.io/krunn.html">Pakend krunnitäidisele</a>
-        <a href="https://siljaportfoolio.github.io/soomoreklaam.html">Soomo turundusmaterjalid</a>
-      
-      
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu {
+            position: absolute;
+            top: 1rem;
+            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime menüü heledama sinise ala peale */
+            display: flex;
+            padding-bottom: 2rem;
+        }
+
+        .menu a {
+            padding: 0 1.5rem;
+            color: #87CEFA; /* Heledam sinine */
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            background-color: #003B5C; /* Tumeroheline sinine taust */
+            color: #87CEFA; /* Heledam sinine tekst */
+            display: none;
+            position: absolute;
+            z-index: 1;
+            padding: 0.5rem 0; /* Vähem paddingut, et linkide vahed oleksid õiged */
+            border-radius: 0.5rem; /* Veidi ümardatud nurgad */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Väike vari */
+            min-width: 200px; /* Minimaalne laius */
+        }
+
+        .dropdown-content a {
+            background-color: transparent; /* Eemaldab taustavärvi */
+            color: #87CEFA; /* Heledam sinine tekst */
+            padding: 0.5rem 1rem; /* Väiksem padding linkide ümber */
+            margin-bottom: 0; /* Vähenenud vahe linkide vahel */
+            text-decoration: none;
+            display: block;
+            font-size: 1em; /* Linkide fondi suurus */
+            border-radius: 0.25rem; /* Veidi ümardatud nurgad */
+        }
+
+        .dropdown-content a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+           
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+	    <div>
+	    <a href="https://sidisain.github.io/">Pealeht</a>
+	    </div>
+        <div class="dropdown">
+            <a href="https://sidisain.github.io/projektid.html">Projektid</a>
+            <div class="dropdown-content">
+                <a href="https://sidisain.github.io/walkers.html">Walkers turundusmaterjalid</a>
+                <a href="https://sidisain.github.io/foto.html">Loosimängu kujundused</a>
+                <a href="https://sidisain.github.io/livinit.html">Livinit mallid</a>
+                <a href="https://sidisain.github.io/kihulane.html">Kihulane logo, etikett</a>
+                <a href="https://sidisain.github.io/oakohv.html">OA kohv</a>
+                <a href="https://sidisain.github.io/handles1.html">Handles bränding</a>
+                <a href="https://sidisain.github.io/soomoreklaam.html">Soomo turundusmaterjalid</a>
+                <a href="https://sidisain.github.io/kvklogo.html">KVK logo ja CVI</a>
+                <a href="https://sidisain.github.io/car24.html">Car24 logo</a>
+                <a href="https://sidisain.github.io/sidisain.html">Sidisain logo</a>
+                <a href="https://sidisain.github.io/soomologo.html">Soomo logo ja CVI</a>
+                <a href="https://sidisain.github.io/ajakiri.html">Soomo ajakiri</a>
+                <a href="https://sidisain.github.io/iluelab.html">Ilu Elab turundusmaterjalid</a>
+                <a href="https://sidisain.github.io/taimeapp.html">Taime rakendus</a>
+                <a href="https://sidisain.github.io/poster.html">Deep Summer Fest poster</a>
+                <a href="https://sidisain.github.io/joulukaart.html">KAK jõulukaart</a>
+                <a href="https://sidisain.github.io/maakodu.html">Maakodu kaanelahendus</a>
+                <a href="https://sidisain.github.io/kalender.html">Lauakalender</a>
+                <a href="https://sidisain.github.io/bons.html">Böns pakend</a>
+                <a href="https://sidisain.github.io/kaijala.html">Käi jala kampaania</a>
+                <a href="https://sidisain.github.io/krunn.html">Pakend krunnitäidisele</a>
+                <a href="https://sidisain.github.io/soomoreklaam.html">Soomo turundusmaterjalid</a>
+            </div>
+        </div>
+        <a href="#">Liikuv graafika</a>
+        <div class="dropdown">
+            <a href="#">Tootefotod</a>
+            <div class="dropdown-content">
+                <a href="#">Valgel taustal</a>
+                <a href="#">Stiliseeritud fotod</a>
+                <a href="#">Elustiili fotod</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <a href="https://siljaportfoolio.github.io/animatsioon.html">Animatsioon</a>
-  <a href="https://siljaportfoolio.github.io/kontakt.html">Kontakt</a>
-  <a href="https://siljaportfoolio.github.io/minust.html">Minust</a>
-</div>
-
-<script>
-  // Function to set the selected menu item in local storage
-  function setMenu(menuItem) {
-    localStorage.setItem('selectedMenuItem', menuItem);
-  }
-
-  // Function to highlight the selected menu item on page load
-  document.addEventListener('DOMContentLoaded', function () {
-    var selectedMenuItem = localStorage.getItem('selectedMenuItem');
-    if (selectedMenuItem) {
-      document.querySelector('.menu a[href="' + selectedMenuItem + '"]').classList.add('selected');
-    }
-  });
-</script>
+</body>
+</html>
