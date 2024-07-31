@@ -6,7 +6,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   
     <title>Sidisain Veebileht</title>
     <style>
         body {
@@ -21,14 +20,15 @@
         }
 
         .container {
-            width: calc(100% - 6rem); /* Vähem laiem kui varem */
-            height: calc(100% - 6rem); /* Vähem kõrgem kui varem */
+            width: calc(100% - 6rem);
+            height: calc(100% - 6rem);
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
             padding: 2rem;
             display: flex;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
             position: relative; /* Animatsiooni paigutamiseks */
         }
 
@@ -38,54 +38,48 @@
             left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime jaluse heledama sinise ala peale */
             color: #87CEFA; /* Heledam sinine tekst */
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-           
         }
         
         .footer a {
             color: #87CEFA; /* Heledam sinine tekst */
             text-decoration: none;
             margin-right: 3rem;
-             font-size: 1.2em;
-            text-decoration: none;
+            font-size: 1.2em;
             font-weight: 500;
         }
         
         .footer a:hover {
-          color: #c0ac8e; /* Hover-efekt */
+            color: #c0ac8e; /* Hover-efekt */
         }
 
- 
         .left-side {
-    width: 50%; /* Vasaku poole ristküliku laius */
-    color: #ffffff; /* Tekstivalge */
-    padding: 10rem 4rem 4rem 6rem; /* Eemaldame ülemise paddingu */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Joondamine algusesse */
-    position: relative; /* Absoluutse positsioonimise alus */
-}
+            width: 50%;
+            color: #ffffff; /* Tekstivalge */
+            padding: 2rem 4rem 4rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
         .left-side h1 {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700; /* Rasvane font */
-            margin: 0 0 0rem 0; /* Väike vahe pealkirja alla */
+            margin: 0 0 1rem 0; /* Väike vahe pealkirja alla */
         }
         
         .left-side p {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 300; /* Tavaline font */
             line-height: 1.6; /* Ridade kõrgus */
-		font-size: 1.4em;
+            font-size: 1.4em;
         }
-        
+
         .right-side {
-            min-height: 500px;
-            width: 50%; /* Parema poole ristküliku laius */
-            color: #ffffff; /* Tekstivalge */
-            padding: 2rem;
+            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
 
         #html5-banner {
@@ -96,30 +90,29 @@
         }
 
         #html5-banner object {
-            min-width: 500px;
-            min-height: 500px;
+            width: 100%;
+            height: 100%;
             border: none;
             border-radius: 3rem;
         }
 
-.logo-container {
-    width: 100%; /* Logo konteiner täislaiuses */
-    height: auto; /* Kõrgus automaatne */
-    position: absolute; /* Absoluutne positsioonimine */
-    top: 0; /* Ülemisse serva */
-    left: 0; /* Vasakule joondamine */
-    display: flex;
-    justify-content: left;
-    align-items: flex-start; /* Joondamine algusesse */
-	 padding: 4rem 0 0 8rem; /* vasakule padding */
-}
-
-        .logo-container img {
-           padding-bottom: 3rem;
-            
+        .logo-container {
+            width: 100%; /* Logo konteiner täislaiuses */
+            height: auto; /* Kõrgus automaatne */
+            position: absolute; /* Absoluutne positsioonimine */
+            top: 0; /* Ülemisse serva */
+            left: 0; /* Vasakule joondamine */
+            display: flex;
+            justify-content: left;
+            align-items: flex-start; /* Joondamine algusesse */
+            padding: 4rem 0 0 8rem; /* vasakule padding */
         }
 
-  .btn {
+        .logo-container img {
+            padding-bottom: 3rem;
+        }
+
+        .btn {
             background-color: #87CEFA; 
             color: #001528; /* Tumeroheline sinine */
             border: none;
@@ -130,144 +123,146 @@
             cursor: pointer;
             margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
             align-self: flex-start; /* Vasakule joondatud */
-font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700 !important; 
-
         }
 
         .btn:hover {
             background-color: #c0ac8e; 
             color: #001528;
         }
-#logo-animation {
-    width: 40vw; /* Määrake konteineri suurus */
-    height: 100%; /* Kõrgus kogu ülejäänud konteiner */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alusta ülemisest äärest */
-  
-}
-	    @media (max-width: 1200px) {
-    .left-side {
-        padding: 8rem 2rem 2rem 4rem; /* Väiksem padding keskmistel ekraanidel */
-    }
 
-    #logo-animation {
-        width: 50vw; /* Muudame suurust keskmistel ekraanidel */
-        height: 30vh;
-    }
-}
+        #logo-animation {
+            width: 100%; /* Määrake konteineri suurus */
+            max-width: 500px;
+            height: auto; /* Kõrgus automaatne */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alusta ülemisest äärest */
+        }
 
-@media (max-width: 992px) {
-    .container {
-        flex-direction: column; /* Muudame paigutuse vertikaalseks kitsamatel ekraanidel */
-        height: auto; /* Automaatne kõrgus */
-        padding: 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
-    }
+        /* Meediapäringud */
 
-    .left-side, .right-side {
-        width: 100%; /* Muudame laiuse 100% kitsamatel ekraanidel */
-        padding: 1rem 0; /* Kitsamate ekraanide jaoks väiksem padding */
-    }
+        @media (max-width: 1200px) {
+            .left-side {
+                padding: 8rem 2rem 2rem 4rem; /* Väiksem padding keskmistel ekraanidel */
+            }
 
-    .left-side {
-        padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
-    }
+            #logo-animation {
+                width: 80%; /* Muudame suurust keskmistel ekraanidel */
+            }
 
-    #logo-animation {
-        width: 60vw; /* Muudame suurust kitsamatel ekraanidel */
-        height: 20vh;
-    }
-}
+            #html5-banner object {
+                max-width: 400px;
+                max-height: 400px;
+            }
+        }
 
-@media (max-width: 768px) {
-    .left-side {
-        padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
-    }
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column; /* Muudame paigutuse vertikaalseks kitsamatel ekraanidel */
+                height: auto; /* Automaatne kõrgus */
+                padding: 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+            }
 
-    .btn {
-        font-size: 1rem; /* Väiksem nupp kitsamatel ekraanidel */
-        padding: 0.6rem 1.5rem; /* Väiksem padding nupul kitsamatel ekraanidel */
-    }
+            .left-side, .right-side {
+                width: 100%; /* Muudame laiuse 100% kitsamatel ekraanidel */
+                padding: 1rem 0; /* Kitsamate ekraanide jaoks väiksem padding */
+            }
 
-    #logo-animation {
-        width: 70vw; /* Muudame suurust kitsamatel ekraanidel */
-        height: 20vh;
-    }
-}
+            .left-side {
+                padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+            }
 
-@media (max-width: 576px) {
-    .left-side p {
-        font-size: 1.2em; /* Väiksem font kitsamatel ekraanidel */
-    }
+            #logo-animation {
+                width: 90%; /* Muudame suurust kitsamatel ekraanidel */
+            }
 
-    .btn {
-        font-size: 0.9rem; /* Väiksem nupp väga kitsastel ekraanidel */
-        padding: 0.5rem 1rem; /* Väiksem padding nupul väga kitsastel ekraanidel */
-    }
+            #html5-banner object {
+                max-width: 300px;
+                max-height: 300px;
+            }
+        }
 
-    #logo-animation {
-        width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
-        height: 15vh;
-    }
-}
+        @media (max-width: 768px) {
+            .left-side {
+                padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+            }
+
+            .btn {
+                font-size: 1rem; /* Väiksem nupp kitsamatel ekraanidel */
+                padding: 0.6rem 1.5rem; /* Väiksem padding nupul kitsamatel ekraanidel */
+            }
+
+            #logo-animation {
+                width: 100%; /* Muudame suurust kitsamatel ekraanidel */
+            }
+
+            #html5-banner object {
+                max-width: 250px;
+                max-height: 250px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .left-side p {
+                font-size: 1.2em; /* Väiksem font kitsamatel ekraanidel */
+            }
+
+            .btn {
+                font-size: 0.9rem; /* Väiksem nupp väga kitsastel ekraanidel */
+                padding: 0.5rem 1rem; /* Väiksem padding nupul väga kitsastel ekraanidel */
+            }
+
+            #logo-animation {
+                width: 100%; /* Muudame suurust väga kitsastel ekraanidel */
+            }
+
+            #html5-banner object {
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
     </style>
-<!-- Lottie teek -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script><body>
+    <!-- Lottie teek -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+</head>
+<body>
     <div id="menu-placeholder"></div>
-     <div class="container">
+    <div class="container">
         <div class="logo-container">
             <div id="logo-animation"></div>
         </div>
         <div class="left-side">
-            
             <p>
                Tere tulemast Sidisain veebilehele, kus spetsialiseerume muljetavaldavate logode ja brändingu, liikuva graafika, tootefotograafia ning graafilise disaini loomisele.
-                Olen kogenud professionaal, kellel on terav silm detailide suhtes ja kirg visuaalselt rabavate kujunduste loomise vastu, mis aitavad teie ettevõttel silma paista.
+                Olen kogenud disainer, kes on valmis viima teie ettevõtte järgmisele tasemele.
             </p>
- <button class="btn">Projektid</button>
+            <a href="https://www.sidisain.ee/">
+                <button class="btn">Minu Tööde Portfoolio</button>
+            </a>
         </div>
         <div class="right-side">
             <div id="html5-banner">
-                <object type="text/html" data="veebi/veebi.html" width="500" height="500"></object>
+                <object data="https://storage.googleapis.com/risovace/logo/sidisain_500x500.html" type="text/html"></object>
             </div>
         </div>
     </div>
     <div class="footer">
-        <a href="#">Kontakt</a>
-        <a href="#">Minust</a>
+        <a href="https://www.instagram.com/sidisain/">Instagram</a>
+        <a href="https://www.behance.net/sidisain">Behance</a>
+        <a href="https://www.linkedin.com/in/sidisain/">LinkedIn</a>
+        <a href="https://www.facebook.com/sidisain/">Facebook</a>
     </div>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-    fetch('menu.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('menu-placeholder').innerHTML = data;
+        var logoAnimation = lottie.loadAnimation({
+            container: document.getElementById('logo-animation'), // Siht konteiner
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_u4yrau.json' // Animatsiooni JSON fail
         });
-
-    // Lottie animatsiooni laadimine
-    var animation = lottie.loadAnimation({
-        container: document.getElementById('logo-animation'), // konteiner
-        renderer: 'svg',
-        loop: false, // animatsiooni kordamine
-        autoplay: true, // automaatne mängimine
-        path: 'sidisain.json' // animatsiooni JSON-faili asukoht
-    });
-
-    animation.addEventListener('data_failed', function() {
-        console.error('Animatsiooni andmete laadimine ebaõnnestus.');
-    });
-
-    animation.addEventListener('DOMLoaded', function() {
-        console.log('Animatsiooni andmed on laaditud.');
-    });
-
-    animation.addEventListener('complete', function() {
-        // Mängi viimast kaadrit
-        animation.goToAndStop(animation.totalFrames, true);
-    });
-});
-
     </script>
 </body>
 </html>
