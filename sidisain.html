@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+    <title>Sidisain Veebileht</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:  #001528; /* Tumeroheline sinine */
+            position: relative;
+            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+        }
+
+        .container {
+            width: calc(100% - 6rem); /* Vähem laiem kui varem */
+            height: calc(100% - 6rem); /* Vähem kõrgem kui varem */
+            background-color: #003B5C; /* Tumesinine taust */
+            border-radius: 2rem; /* Ümardatud nurgad */
+            box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            position: relative; /* Animatsiooni paigutamiseks */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 1rem;
+            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime jaluse heledama sinise ala peale */
+            color: #87CEFA; /* Heledam sinine tekst */
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+           
+        }
+        
+        .footer a {
+            color: #87CEFA; /* Heledam sinine tekst */
+            text-decoration: none;
+            margin-right: 3rem;
+             font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+          color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .left-side {
+            width: 50%; /* Vasaku poole ristküliku laius */
+            color: #ffffff; /* Tekstivalge */
+            padding: 8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .left-side h1 {
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 700; /* Rasvane font */
+            margin: 0 0 0rem 0; /* Väike vahe pealkirja alla */
+        }
+        
+        .left-side p {
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+		font-size: 1.4em;
+        }
+        
+        .right-side {
+            min-height: 500px;
+            width: 50%; /* Parema poole ristküliku laius */
+            color: #ffffff; /* Tekstivalge */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #html5-banner {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        #html5-banner object {
+            min-width: 500px;
+            min-height: 500px;
+            border: none;
+            border-radius: 3rem;
+        }
+         .logo-container {
+              min-width: 80%;
+            max-width: 80%; /* Logo maksimaalne laius */
+              height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
+            display: flex;
+            align-items: center;
+             padding-bottom: 1rem;
+        }
+
+        .logo-container img {
+           padding-bottom: 3rem;
+            
+        }
+
+  .btn {
+            background-color: #87CEFA; 
+            color: #001528; /* Tumeroheline sinine */
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
+            align-self: flex-start; /* Vasakule joondatud */
+font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 700 !important; 
+
+        }
+
+        .btn:hover {
+            background-color: #c0ac8e; 
+            color: #001528;
+        }
+ #logo-animation {
+            width: 100%; /* Määrake konteineri suurus */
+            height: 300px; /* Näide kõrgus */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+<!-- Lottie teek -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script><body>
+    <div id="menu-placeholder"></div>
+    <div class="container">
+        <div class="left-side">
+            <div class="logo-container">
+                <div id="logo-animation"></div>
+            </div>
+            
+            <p>
+               Tere tulemast Sidisain veebilehele, kus spetsialiseerume muljetavaldavate logode ja brändingu, liikuva graafika, tootefotograafia ning graafilise disaini loomisele.
+                Olen kogenud professionaal, kellel on terav silm detailide suhtes ja kirg visuaalselt rabavate kujunduste loomise vastu, mis aitavad teie ettevõttel silma paista.
+            </p>
+ <button class="btn">Projektid</button>
+        </div>
+        <div class="right-side">
+            <div id="html5-banner">
+                <object type="text/html" data="veebi/veebi.html" width="500" height="500"></object>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">Kontakt</a>
+        <a href="#">Minust</a>
+    </div>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-placeholder').innerHTML = data;
+                });
+
+            // Lottie animatsiooni laadimine
+            var animation = lottie.loadAnimation({
+                container: document.getElementById('logo-animation'), // konteiner
+                renderer: 'svg',
+                loop: false, // animatsiooni kordamine
+                autoplay: true, // automaatne mängimine
+                path: 'animatsioon.json' // animatsiooni JSON-faili asukoht
+            });
+
+            animation.addEventListener('data_failed', function() {
+                console.error('Animatsiooni andmete laadimine ebaõnnestus.');
+            });
+
+            animation.addEventListener('DOMLoaded', function() {
+                console.log('Animatsiooni andmed on laaditud.');
+            });
+        });
+    </script>
+</body>
+</html>
