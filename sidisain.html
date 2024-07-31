@@ -147,6 +147,70 @@ font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
     align-items: flex-start; /* Alusta ülemisest äärest */
   
 }
+	    @media (max-width: 1200px) {
+    .left-side {
+        padding: 8rem 2rem 2rem 4rem; /* Väiksem padding keskmistel ekraanidel */
+    }
+
+    #logo-animation {
+        width: 50vw; /* Muudame suurust keskmistel ekraanidel */
+        height: 30vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column; /* Muudame paigutuse vertikaalseks kitsamatel ekraanidel */
+        height: auto; /* Automaatne kõrgus */
+        padding: 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+    }
+
+    .left-side, .right-side {
+        width: 100%; /* Muudame laiuse 100% kitsamatel ekraanidel */
+        padding: 1rem 0; /* Kitsamate ekraanide jaoks väiksem padding */
+    }
+
+    .left-side {
+        padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+    }
+
+    #logo-animation {
+        width: 60vw; /* Muudame suurust kitsamatel ekraanidel */
+        height: 20vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-side {
+        padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
+    }
+
+    .btn {
+        font-size: 1rem; /* Väiksem nupp kitsamatel ekraanidel */
+        padding: 0.6rem 1.5rem; /* Väiksem padding nupul kitsamatel ekraanidel */
+    }
+
+    #logo-animation {
+        width: 70vw; /* Muudame suurust kitsamatel ekraanidel */
+        height: 20vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .left-side p {
+        font-size: 1.2em; /* Väiksem font kitsamatel ekraanidel */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Väiksem nupp väga kitsastel ekraanidel */
+        padding: 0.5rem 1rem; /* Väiksem padding nupul väga kitsastel ekraanidel */
+    }
+
+    #logo-animation {
+        width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
+        height: 15vh;
+    }
+}
     </style>
 <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script><body>
