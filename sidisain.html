@@ -145,6 +145,12 @@
 
         /* Meediapäringud */
         @media (max-width: 1200px) {
+            .left-side p {
+           
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 1.2em;
+        }
             .left-side {
                 padding: 8rem 2rem 2rem 4rem; /* Väiksem padding keskmistel ekraanidel */
             }
@@ -166,7 +172,12 @@
                 height: auto; /* Automaatne kõrgus */
                 padding: 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
             }
-
+     .left-side p {
+           
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 1em;
+        }
             .left-side, .right-side {
                 width: 100%; /* Muudame laiuse 100% kitsamatel ekraanidel */
                 padding: 1rem 0; /* Kitsamate ekraanide jaoks väiksem padding */
@@ -191,7 +202,12 @@
             .left-side {
                 padding: 2rem 1rem; /* Kitsamate ekraanide jaoks väiksem padding */
             }
-
+ .left-side p {
+           
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 0.9em;
+        }
             .btn {
                 font-size: 1rem; /* Väiksem nupp kitsamatel ekraanidel */
                 padding: 0.6rem 1.5rem; /* Väiksem padding nupul kitsamatel ekraanidel */
@@ -209,6 +225,12 @@
         }
 
         @media (max-width: 576px) {
+             .left-side p {
+           
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 0.8em;
+        }
             .left-side p {
                 font-size: 1.2em; /* Väiksem font kitsamatel ekraanidel */
             }
@@ -229,7 +251,7 @@
             }
         }
 
-        @media (max-height: 600px) {
+        @media (max-height: 1080px) {
             .left-side {
                 padding: 5rem 2rem 2rem 3rem; /* Väiksem padding väiksemate kõrgustega ekraanidel */
             }
@@ -241,6 +263,17 @@
             #html5-banner object {
                 min-height: 200px; /* Muudame suurust väiksemate kõrgustega ekraanidel */
             }
+             .logo-container {
+            width: 100%; /* Logo konteiner täislaiuses */
+            height: auto; /* Kõrgus automaatne */
+            position: absolute; /* Absoluutne positsioonimine */
+            top: 0; /* Ülemisse serva */
+            left: 0; /* Vasakule joondamine */
+            display: flex;
+            justify-content: left;
+            align-items: flex-start; /* Joondamine algusesse */
+            padding: 0 0 0 8rem; /* vasakule padding */
+        }
         }
     </style>
     <!-- Lottie teek -->
