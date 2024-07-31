@@ -54,15 +54,17 @@
           color: #c0ac8e; /* Hover-efekt */
         }
 
+ 
         .left-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
-            color: #ffffff; /* Tekstivalge */
-            padding: 8rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
+    width: 50%; /* Vasaku poole ristküliku laius */
+    color: #ffffff; /* Tekstivalge */
+    padding: 0 4rem 4rem 4rem; /* Eemaldame ülemise paddingu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Joondamine algusesse */
+    position: relative; /* Absoluutse positsioonimise alus */
+}
+
         .left-side h1 {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700; /* Rasvane font */
@@ -100,13 +102,16 @@
             border-radius: 3rem;
         }
          .logo-container {
-              min-width: 80%;
-            max-width: 80%; /* Logo maksimaalne laius */
-              height: auto; /* Logo kõrgus automaatselt vastavalt laiuselt */
-            display: flex;
-            align-items: center;
-             padding-bottom: 1rem;
-        }
+    width: 100%; /* Logo konteiner täislaiuses */
+    height: 300px; /* Näite kõrgus */
+    position: absolute; /* Absoluutne positsioonimine */
+    top: -200px; /* Nihutamine ülespoole */
+    left: 0; /* Vasakule joondamine */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Joondamine algusesse */
+}
+
 
         .logo-container img {
            padding-bottom: 3rem;
@@ -139,7 +144,7 @@ font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Alusta ülemisest äärest */
-    margin-top: -2rem; /* Vajadusel kohanda, et täpselt sobituks */
+  
 }
     </style>
 <!-- Lottie teek -->
