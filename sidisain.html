@@ -133,13 +133,14 @@ font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             background-color: #c0ac8e; 
             color: #001528;
         }
- #logo-animation {
-            width: 100%; /* Määrake konteineri suurus */
-            height: 300px; /* Näide kõrgus */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+#logo-animation {
+    width: 100%; /* Määrake konteineri suurus */
+    height: 100%; /* Kõrgus kogu ülejäänud konteiner */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alusta ülemisest äärest */
+    margin-top: -2rem; /* Vajadusel kohanda, et täpselt sobituks */
+}
     </style>
 <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script><body>
@@ -167,30 +168,36 @@ font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
         <a href="#">Minust</a>
     </div>
     <script>
-       document.addEventListener("DOMContentLoaded", function() {
-            fetch('menu.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('menu-placeholder').innerHTML = data;
-                });
-
-            // Lottie animatsiooni laadimine
-            var animation = lottie.loadAnimation({
-                container: document.getElementById('logo-animation'), // konteiner
-                renderer: 'svg',
-                loop: false, // animatsiooni kordamine
-                autoplay: true, // automaatne mängimine
-                path: 'sidisain.json' // animatsiooni JSON-faili asukoht
-            });
-
-            animation.addEventListener('data_failed', function() {
-                console.error('Animatsiooni andmete laadimine ebaõnnestus.');
-            });
-
-            animation.addEventListener('DOMLoaded', function() {
-                console.log('Animatsiooni andmed on laaditud.');
-            });
+      document.addEventListener("DOMContentLoaded", function() {
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-placeholder').innerHTML = data;
         });
+
+    // Lottie animatsiooni laadimine
+    var animation = lottie.loadAnimation({
+        container: document.getElementById('logo-animation'), // konteiner
+        renderer: 'svg',
+        loop: false, // animatsiooni kordamine
+        autoplay: true, // automaatne mängimine
+        path: 'sidisain.json' // animatsiooni JSON-faili asukoht
+    });
+
+    animation.addEventListener('data_failed', function() {
+        console.error('Animatsiooni andmete laadimine ebaõnnestus.');
+    });
+
+    animation.addEventListener('DOMLoaded', function() {
+        console.log('Animatsiooni andmed on laaditud.');
+    });
+
+    animation.addEventListener('complete', function() {
+        // Mängi viimast kaadrit
+        animation.goToAndStop(animation.totalFrames, true);
+    });
+});
+
     </script>
 </body>
 </html>
