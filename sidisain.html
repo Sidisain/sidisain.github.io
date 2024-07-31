@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
     <title>Sidisain Veebileht</title>
     <style>
         body {
@@ -14,21 +15,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color:  #001528; /* Tumeroheline sinine */
+            background-color: #001528; /* Tumeroheline sinine */
             position: relative;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
 
         .container {
-            width: calc(100% - 6rem);
-            height: calc(100% - 6rem);
+            width: calc(100% - 6rem); /* Vähem laiem kui varem */
+            height: calc(100% - 6rem); /* Vähem kõrgem kui varem */
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
             padding: 2rem;
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             position: relative; /* Animatsiooni paigutamiseks */
         }
 
@@ -53,12 +53,13 @@
         }
 
         .left-side {
-            width: 50%;
+            width: 50%; /* Vasaku poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
-            padding: 2rem 4rem 4rem 6rem;
+            padding: 10rem 4rem 4rem 6rem; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: flex-start; /* Joondamine algusesse */
+            position: relative; /* Absoluutse positsioonimise alus */
         }
 
         .left-side h1 {
@@ -73,13 +74,15 @@
             line-height: 1.6; /* Ridade kõrgus */
             font-size: 1.4em;
         }
-
+        
         .right-side {
-            width: 50%;
+            min-height: 500px;
+            width: 50%; /* Parema poole ristküliku laius */
+            color: #ffffff; /* Tekstivalge */
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
         #html5-banner {
@@ -90,8 +93,8 @@
         }
 
         #html5-banner object {
-            width: 100%;
-            height: 100%;
+            min-width: 500px;
+            min-height: 500px;
             border: none;
             border-radius: 3rem;
         }
@@ -133,28 +136,27 @@
         }
 
         #logo-animation {
-            width: 100%; /* Määrake konteineri suurus */
-            max-width: 500px;
-            height: auto; /* Kõrgus automaatne */
+            width: 40vw; /* Määrake konteineri suurus */
+            height: 100%; /* Kõrgus kogu ülejäänud konteiner */
             display: flex;
             justify-content: center;
             align-items: flex-start; /* Alusta ülemisest äärest */
         }
 
         /* Meediapäringud */
-
         @media (max-width: 1200px) {
             .left-side {
                 padding: 8rem 2rem 2rem 4rem; /* Väiksem padding keskmistel ekraanidel */
             }
 
             #logo-animation {
-                width: 80%; /* Muudame suurust keskmistel ekraanidel */
+                width: 50vw; /* Muudame suurust keskmistel ekraanidel */
+                height: 30vh;
             }
 
             #html5-banner object {
-                max-width: 400px;
-                max-height: 400px;
+                min-width: 400px;
+                min-height: 400px;
             }
         }
 
@@ -175,12 +177,13 @@
             }
 
             #logo-animation {
-                width: 90%; /* Muudame suurust kitsamatel ekraanidel */
+                width: 60vw; /* Muudame suurust kitsamatel ekraanidel */
+                height: 20vh;
             }
 
             #html5-banner object {
-                max-width: 300px;
-                max-height: 300px;
+                min-width: 300px;
+                min-height: 300px;
             }
         }
 
@@ -195,12 +198,13 @@
             }
 
             #logo-animation {
-                width: 100%; /* Muudame suurust kitsamatel ekraanidel */
+                width: 70vw; /* Muudame suurust kitsamatel ekraanidel */
+                height: 20vh;
             }
 
             #html5-banner object {
-                max-width: 250px;
-                max-height: 250px;
+                min-width: 250px;
+                min-height: 250px;
             }
         }
 
@@ -215,12 +219,27 @@
             }
 
             #logo-animation {
-                width: 100%; /* Muudame suurust väga kitsastel ekraanidel */
+                width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
+                height: 15vh;
             }
 
             #html5-banner object {
-                max-width: 200px;
-                max-height: 200px;
+                min-width: 200px;
+                min-height: 200px;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .left-side {
+                padding: 5rem 2rem 2rem 3rem; /* Väiksem padding väiksemate kõrgustega ekraanidel */
+            }
+
+            #logo-animation {
+                height: 15vh; /* Muudame suurust väiksemate kõrgustega ekraanidel */
+            }
+
+            #html5-banner object {
+                min-height: 200px; /* Muudame suurust väiksemate kõrgustega ekraanidel */
             }
         }
     </style>
@@ -236,33 +255,50 @@
         <div class="left-side">
             <p>
                Tere tulemast Sidisain veebilehele, kus spetsialiseerume muljetavaldavate logode ja brändingu, liikuva graafika, tootefotograafia ning graafilise disaini loomisele.
-                Olen kogenud disainer, kes on valmis viima teie ettevõtte järgmisele tasemele.
+                Olen kogenud professionaal, kellel on terav silm detailide suhtes ja kirg visuaalselt rabavate kujunduste loomise vastu, mis aitavad teie ettevõttel silma paista.
             </p>
-            <a href="https://www.sidisain.ee/">
-                <button class="btn">Minu Tööde Portfoolio</button>
-            </a>
+            <button class="btn">Projektid</button>
         </div>
         <div class="right-side">
             <div id="html5-banner">
-                <object data="https://storage.googleapis.com/risovace/logo/sidisain_500x500.html" type="text/html"></object>
+                <object type="text/html" data="veebi/veebi.html" width="500" height="500"></object>
             </div>
         </div>
     </div>
     <div class="footer">
-        <a href="https://www.instagram.com/sidisain/">Instagram</a>
-        <a href="https://www.behance.net/sidisain">Behance</a>
-        <a href="https://www.linkedin.com/in/sidisain/">LinkedIn</a>
-        <a href="https://www.facebook.com/sidisain/">Facebook</a>
+        <a href="#">Kontakt</a>
+        <a href="#">Minust</a>
     </div>
-
     <script>
-        var logoAnimation = lottie.loadAnimation({
-            container: document.getElementById('logo-animation'), // Siht konteiner
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
+
+        // Lottie animatsiooni laadimine
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('logo-animation'), // konteiner
             renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'https://assets9.lottiefiles.com/packages/lf20_u4yrau.json' // Animatsiooni JSON fail
+            loop: false, // animatsiooni kordamine
+            autoplay: true, // automaatne mängimine
+            path: 'sidisain.json' // animatsiooni JSON-faili asukoht
         });
+
+        animation.addEventListener('data_failed', function() {
+            console.error('Animatsiooni andmete laadimine ebaõnnestus.');
+        });
+
+        animation.addEventListener('DOMLoaded', function() {
+            console.log('Animatsiooni andmed on laaditud.');
+        });
+
+        animation.addEventListener('complete', function() {
+            // Mängi viimast kaadrit
+            animation.goToAndStop(animation.totalFrames, true);
+        });
+    });
     </script>
 </body>
 </html>
