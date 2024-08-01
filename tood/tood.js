@@ -158,7 +158,7 @@ if (reversed == null) { reversed = false; }
 }).prototype = getMCSymbolPrototype(lib.ClipGroup_1, new cjs.Rectangle(44,74.6,532.1,532.1), null);
 
 
-(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
+(lib.button = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -169,10 +169,18 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#222221").s().p("EgpJApKMAAAhSTMBSTAAAMAAABSTg");
+	this.shape.setTransform(263.425,263.425);
+	this.shape._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3).to({_off:false},0).wait(1));
+
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,0,0);
+p.nominalBounds = new cjs.Rectangle(0,0,526.9,526.9);
 
 
 // stage content:
@@ -187,10 +195,10 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// Symbol_1
-	this.instance = new lib.Symbol1();
-	this.instance.setTransform(250,250,1,1,0,0,0,250,250);
-	new cjs.ButtonHelper(this.instance, 0, 1, 1);
+	// Layer_1
+	this.instance = new lib.button();
+	this.instance.setTransform(247.75,257.15,1,1,0,0,0,263.4,263.4);
+	new cjs.ButtonHelper(this.instance, 0, 1, 2, false, new lib.button(), 3);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(388));
 
