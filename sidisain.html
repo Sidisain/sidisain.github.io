@@ -215,26 +215,26 @@
 /* Meediapäringud */
 @media (max-width: 576px) {
     body {
-        background-color: #001528; /* Tume sinine taust */
-        margin: 0;
-        padding: 0;
-            display: flex;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
+        margin: 0;
     }
+
+    .container {
+        flex: 1; /* Võtab kogu vaba ruumi */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Keskendab sisu vertikaalselt */
+    }
+
+
+
 .menu a {
         font-size: 0.9em !important; 
         margin: 0 1rem !important;
     }
-    .container {
-        width: calc(100% - 2rem); /* Väiksem laius mobiilivaates */
-        height: auto;
-        border-radius: 1rem;
-        padding: 1rem; /* Väiksem padding */
-        margin-top: 30rem;
-        
-    }
+
 
     .left-side, .right-side {
         width: 100%; /* 100% laius */
