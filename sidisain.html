@@ -26,7 +26,7 @@
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
-            padding: 2rem;
+            padding: 5rem;
             display: flex;
             align-items: center;
             position: relative; /* Animatsiooni paigutamiseks */
@@ -55,7 +55,7 @@
         .left-side {
             width: 50%; /* Vasaku poole ristküliku laius */
             color: #ffffff; /* Tekstivalge */
-            padding: 10rem 0rem 0rem 0rem; /* Eemaldame ülemise paddingu */
+            padding: 0rem 0rem 0rem 0rem; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Joondamine algusesse */
@@ -76,8 +76,6 @@
         .right-side {
             
             width: 50%; /* Parema poole ristküliku laius */
-            color: #ffffff; /* Tekstivalge */
-          
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -253,17 +251,7 @@
             #html5-banner object {
                 min-height: 200px; /* Muudame suurust väiksemate kõrgustega ekraanidel */
             }
-             .logo-container {
-            width: 100%; /* Logo konteiner täislaiuses */
-            height: auto; /* Kõrgus automaatne */
-            position: absolute; /* Absoluutne positsioonimine */
-            top: 0; /* Ülemisse serva */
-            left: 0; /* Vasakule joondamine */
-            display: flex;
-            justify-content: left;
-            align-items: flex-start; /* Joondamine algusesse */
-            padding: 0 0 0 5rem; /* vasakule padding */
-        }
+            
         }
          @media (max-height: 800px) {
          
@@ -273,17 +261,7 @@
             #html5-banner object {
                 min-height: 200px; /* Muudame suurust väiksemate kõrgustega ekraanidel */
             }
-             .logo-container {
-            width: 100%; /* Logo konteiner täislaiuses */
-            height: 50%; /* Kõrgus automaatne */
-            position: absolute; /* Absoluutne positsioonimine */
-            top: 0; /* Ülemisse serva */
-            left: 0; /* Vasakule joondamine */
-            display: flex;
-            justify-content: left;
-            align-items: flex-start; /* Joondamine algusesse */
-            padding: 0 0 0 0rem; /* vasakule padding */
-        }
+          
               .left-side p {
            
             font-weight: 300; /* Tavaline font */
@@ -311,7 +289,7 @@
         </div>
         <div class="right-side">
             <div id="html5-banner">
-                <object type="text/html" data="veebi/veebi.html" ></object>
+                <object type="text/html" data="veebi/veebi.html" width="500" height="500"></object>
             </div>
         </div>
     </div>
