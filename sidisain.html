@@ -243,12 +243,12 @@
     }
 
     .footer {
-        position: absolute; /* Positsioneerime absoluutselt */
-        bottom: 0; /* Jalus asub lehe allosas */
-        left: 0;
-        width: 100%;
+    
+        position: relative; /* Võtame absoluutsest positsioonist välja */
+        margin-top: auto; /* Lükkab jaluse kõige alla */
         background-color: #001528; /* Tume sinine taust */
         padding: 1rem;
+        width: 100%;
         display: flex;
         justify-content: center; /* Keskjoondatud jaluse elemendid */
     }
