@@ -473,7 +473,26 @@
                 });
             }
 
+            // Laadi animatsioon lehe laadimisel
+            loadAnimation();
 
+            // Kuula orientatsiooni muutusi
+            window.addEventListener('resize', loadAnimation);
+
+            // Laadi HTML-bänner asünkroonselt
+            function loadHtmlBanner() {
+                let bannerContainer = document.getElementById('html5-banner');
+                let objectElement = document.createElement('object');
+                objectElement.type = 'text/html';
+                objectElement.data = 'tood/tood.html';
+                objectElement.width = '500';
+                objectElement.height = '500';
+                bannerContainer.appendChild(objectElement);
+            }
+
+            // Laadi HTML-bänner pärast DOM täielikku laadimist
+            loadHtmlBanner();
+        });
 </script>
 
 </body>
