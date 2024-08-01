@@ -413,6 +413,7 @@
         <a href="#">Minust</a>
     </div>
    <script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Laadi menüü sisu
         fetch('menu.html')
@@ -421,20 +422,30 @@
                 document.getElementById('menu-placeholder').innerHTML = data;
             });
 
-        // Funktsioon animatsiooni laadimiseks vastavalt seadme orientatsioonile
-        function loadAnimation() {
-            var animationPath;
+        // Muutujad animatsiooni jälgimiseks
+        let animation = null;
+        let animationPath = '';
 
+        function loadAnimation() {
             // Kontrolli, kas seade on portree režiimis
-            if (window.matchMedia("(orientation: portrait)").matches) {
-                // Portree režiimis, kasuta sidisainsuur.json
-                animationPath = 'sidisainsuur.json';
-            } else {
-                // Maastikurežiimis, kasuta sidisain.json
-                animationPath = 'sidisain.json';
+            let newAnimationPath = window.matchMedia("(orientation: portrait)").matches 
+                ? 'sidisainsuur.json' 
+                : 'sidisain.json';
+
+            // Kui animatsioon on juba olemas ja tee ei ole muutunud, siis ei tee midagi
+            if (animation && animationPath === newAnimationPath) {
+                return;
             }
 
-            var animation = lottie.loadAnimation({
+            // Tühjenda vana animatsioon, kui olemas
+            if (animation) {
+                animation.destroy(); // Lõpeta vana animatsioon
+            }
+
+            // Uuenda animatsiooni teed ja alusta uut animatsiooni
+            animationPath = newAnimationPath;
+
+            animation = lottie.loadAnimation({
                 container: document.getElementById('logo-animation'), // konteiner
                 renderer: 'svg',
                 loop: false, // animatsiooni kordamine
@@ -462,6 +473,8 @@
         // Kuula orientatsiooni muutusi
         window.addEventListener('resize', loadAnimation);
     });
+
+
 </script>
 
 </body>
