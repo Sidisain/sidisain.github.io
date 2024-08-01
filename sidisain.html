@@ -212,60 +212,67 @@
                 min-height: 250px !important;
             }
         }
+/* Meediapäringud */
 @media (max-width: 576px) {
     body {
-        background-color: #003B5C; /* Sinine taust, mis katab kogu lehe */
+        background-color: #001528; /* Tume sinine taust */
+        margin: 0;
+        padding: 0;
     }
 
     .container {
-        width: 100%; /* Täielik laius */
-        height: auto; /* Automaatne kõrgus */
-        border-radius: 0; /* Eemaldame ümardatud nurgad */
+        width: calc(100% - 2rem); /* Väiksem laius mobiilivaates */
+        height: auto;
+        border-radius: 1rem;
         padding: 1rem; /* Väiksem padding */
+        margin: 1rem auto; /* Keskjoondatud */
     }
 
     .left-side, .right-side {
         width: 100%; /* 100% laius */
+        padding: 0;
+        align-items: center; /* Keskjoondatud elemendid */
     }
 
     .footer {
-        position: relative; /* Muudame positsioneerimise suhteliseks */
+        position: absolute; /* Positsioneerime absoluutselt */
         bottom: 0; /* Jalus asub lehe allosas */
-        left: 0; /* Vasakule joondatud */
-        padding: 1rem; /* Lisame paddingu */
+        left: 0;
+        width: 100%;
+        background-color: #001528; /* Tume sinine taust */
+        padding: 1rem;
+        display: flex;
+        justify-content: center; /* Keskjoondatud jaluse elemendid */
     }
 
     .footer a {
-        font-size: 1em; /* Väiksem font jaluses */
+        font-size: 0.9em; /* Väiksem font jaluses */
+        margin: 0 1rem;
     }
 
     .left-side p {
         font-size: 1em; /* Väiksem font */
+        text-align: center; /* Tekst keskjoondatud */
     }
 
     .btn {
         font-size: 1em; /* Väiksem nupp */
         padding: 0.5rem 1rem; /* Väiksem padding nupul */
+        align-self: center; /* Keskjoondatud nupp */
     }
 
     #logo-animation {
-        width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
-        height: 20vh;
+        width: 60vw; /* Muudame suurust väga kitsastel ekraanidel */
+        height: auto;
+        margin-bottom: 1rem;
     }
 
     #html5-banner object {
         width: 80vw;
-        height: 80vw;
-    }
-
-    .left-side {
-        padding: 1rem 0.5rem; /* Väiksem padding */
-    }
-
-    .btn {
-        align-self: center; /* Keskjoondatud nupp */
+        height: auto;
     }
 }
+
 
 
         @media (max-height: 1080px) {
