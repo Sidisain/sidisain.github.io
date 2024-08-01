@@ -212,48 +212,61 @@
                 min-height: 250px !important;
             }
         }
+@media (max-width: 576px) {
+    body {
+        background-color: #003B5C; /* Sinine taust, mis katab kogu lehe */
+    }
 
-        @media (max-width: 576px) {
-             .left-side p {
-           
-            font-weight: 300; /* Tavaline font */
-            line-height: 1.6; /* Ridade kõrgus */
-            font-size: 0.8em;
-        }
-            .left-side p {
-                font-size: 1.2em; /* Väiksem font kitsamatel ekraanidel */
-            }
+    .container {
+        width: 100%; /* Täielik laius */
+        height: auto; /* Automaatne kõrgus */
+        border-radius: 0; /* Eemaldame ümardatud nurgad */
+        padding: 1rem; /* Väiksem padding */
+    }
 
-            .btn {
-                font-size: 0.9rem; /* Väiksem nupp väga kitsastel ekraanidel */
-                padding: 0.5rem 1rem; /* Väiksem padding nupul väga kitsastel ekraanidel */
-            }
+    .left-side, .right-side {
+        width: 100%; /* 100% laius */
+    }
 
-            #logo-animation {
-                width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
-                height: 15vh;
-            }
+    .footer {
+        position: relative; /* Muudame positsioneerimise suhteliseks */
+        bottom: 0; /* Jalus asub lehe allosas */
+        left: 0; /* Vasakule joondatud */
+        padding: 1rem; /* Lisame paddingu */
+    }
 
-            #html5-banner object {
-                min-width: 200px;
-                min-height: 200px;
-            }
-            #text/html
-            {
-                min-width: 200px !important;
-                min-height: 200px !important;
-            }
-             .left-side {
-        
-            align-items: center;
-            justify-content: center;
-        }
-            .btn {
-           align-items: center;
-            justify-content: center;
-        }
+    .footer a {
+        font-size: 1em; /* Väiksem font jaluses */
+    }
 
-        }
+    .left-side p {
+        font-size: 1em; /* Väiksem font */
+    }
+
+    .btn {
+        font-size: 1em; /* Väiksem nupp */
+        padding: 0.5rem 1rem; /* Väiksem padding nupul */
+    }
+
+    #logo-animation {
+        width: 80vw; /* Muudame suurust väga kitsastel ekraanidel */
+        height: 20vh;
+    }
+
+    #html5-banner object {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .left-side {
+        padding: 1rem 0.5rem; /* Väiksem padding */
+    }
+
+    .btn {
+        align-self: center; /* Keskjoondatud nupp */
+    }
+}
+
 
         @media (max-height: 1080px) {
          
