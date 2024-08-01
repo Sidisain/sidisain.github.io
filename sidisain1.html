@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidisain Veebileht</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #001528;
+            color: white;
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem;
+        }
+
+        #menu {
+            font-size: 1.4em;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem 2rem;
+            padding: 2rem;
+            background-color: #003B5C;
+            border-radius: 1rem;
+        }
+
+        .left-side, .right-side {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .left-side {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .animation {
+            margin-bottom: 2rem;
+        }
+
+        .welcome-text {
+            font-size: 1.4em;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: #87CEFA;
+            color: #001528;
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            align-self: flex-start;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #c0ac8e;
+            color: #001528;
+        }
+
+        .right-side .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 30rem;
+            max-height: 30rem;
+            margin: auto;
+        }
+
+        footer {
+            display: flex;
+            padding: 2rem;
+            background-color: #001528;
+            color: #87CEFA;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .footer-section {
+            margin-right: 2rem;
+        }
+
+        footer a {
+            color: #87CEFA;
+            text-decoration: none;
+        }
+
+        @media (max-width: 75rem) {
+            .container {
+                flex-direction: column;
+            }
+
+            .right-side {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 48rem) {
+            .menu-container, footer {
+                font-size: 1.2em;
+            }
+
+            .welcome-text {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
+            }
+
+            .right-side .banner {
+                max-width: 20rem;
+                max-height: 20rem;
+            }
+        }
+
+        @media (max-width: 30rem) {
+            .menu-container, footer {
+                font-size: 1em;
+            }
+
+            .welcome-text {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .right-side .banner {
+                max-width: 15rem;
+                max-height: 15rem;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha384-MZcW1gxA00DSdPZMP/jxx8/sZ0bcCkOa95uCpsTnv2FuF0JrF8EqF2x9j5hdfXyk" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Menüü HTML tuleb menu.html failist -->
+        <div id="menu"></div>
+    </div>
+
+    <div class="container">
+        <div class="left-side">
+            <div class="animation" id="animationContainer"></div>
+            <div class="welcome-text">
+                Tere tulemast Sidisain veebilehele, kus spetsialiseerume muljetavaldavate logode ja brändingu, liikuva graafika, tootefotograafia ning graafilise disaini loomisele. Olen kogenud professionaal, kellel on terav silm detailide suhtes ja kirg visuaalselt rabavate kujunduste loomise vastu, mis aitavad teie ettevõttel silma paista.
+            </div>
+            <div>
+                <button class="btn">Projektid</button>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="banner">
+                <!-- HTML banner -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="footer-section">
+            <a href="#minust">Minust</a>
+        </div>
+    </footer>
+
+    <script>
+        // Menüü sisu laadimine
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('menu').innerHTML = data);
+
+        // JSON animatsiooni laadimine
+        var animation = bodymovin.loadAnimation({
+            container: document.getElementById('animationContainer'),
+            path: 'path/to/your/animation.json', // Asenda oma JSON failiga
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            name: "Demo Animation"
+        });
+    </script>
+</body>
+</html>
