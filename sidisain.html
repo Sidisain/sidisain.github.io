@@ -310,6 +310,8 @@
             body {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 min-height: 100vh;
                 margin: 0;
             }
@@ -319,6 +321,9 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center; /* Keskendab sisu vertikaalselt */
+                margin-top: 3em;
+                margin-bottom: 1em;
+            
             }
 
             .menu a {
@@ -407,20 +412,26 @@
         <a href="#">Kontakt</a>
         <a href="#">Minust</a>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('menu.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('menu-placeholder').innerHTML = data;
-                });
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Laadi menüü sisu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
 
-            // Laadige animatsioonid vastavalt seadme tüübile
+        // Funktsioon animatsiooni laadimiseks vastavalt seadme orientatsioonile
+        function loadAnimation() {
             var animationPath;
-            if (window.innerWidth <= 576) {
-                animationPath = 'sidisainsuur.json'; // Telefonivaade
+
+            // Kontrolli, kas seade on portree režiimis
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // Portree režiimis, kasuta sidisainsuur.json
+                animationPath = 'sidisainsuur.json';
             } else {
-                animationPath = 'sidisain.json'; // Arvuti vaade
+                // Maastikurežiimis, kasuta sidisain.json
+                animationPath = 'sidisain.json';
             }
 
             var animation = lottie.loadAnimation({
@@ -443,7 +454,15 @@
                 // Mängi viimast kaadrit
                 animation.goToAndStop(animation.totalFrames, true);
             });
-        });
-    </script>
+        }
+
+        // Laadi animatsioon lehe laadimisel
+        loadAnimation();
+
+        // Kuula orientatsiooni muutusi
+        window.addEventListener('resize', loadAnimation);
+    });
+</script>
+
 </body>
 </html>
