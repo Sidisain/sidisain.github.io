@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%); /* Keskjoondus */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .menu a {
+            padding: 0 1rem;
+            color: #87CEFA; /* Heledam sinine */
+            font-size: 1em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            background-color: #003B5C; /* Tumeroheline sinine taust */
+            color: #87CEFA; /* Heledam sinine tekst */
+            display: none;
+            position: absolute;
+            z-index: 1;
+            padding: 0.5rem 0; /* Vähem paddingut, et linkide vahed oleksid õiged */
+            border-radius: 0.5rem; /* Veidi ümardatud nurgad */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Väike vari */
+            min-width: 200px; /* Minimaalne laius */
+        }
+
+        .dropdown-content a {
+            background-color: transparent; /* Eemaldab taustavärvi */
+            color: #87CEFA; /* Heledam sinine tekst */
+            padding: 0.5rem 1rem; /* Väiksem padding linkide ümber */
+            margin-bottom: 0; /* Vähenenud vahe linkide vahel */
+            text-decoration: none;
+            display: block;
+            font-size: 0.9em; /* Linkide fondi suurus */
+            border-radius: 0.25rem; /* Veidi ümardatud nurgad */
+        }
+
+        .dropdown-content a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .menu {
+                top: 1rem;
+                left: calc((100% - 100vw) / 2 + 4rem); /* Suuremate seadmete jaoks */
+                flex-wrap: nowrap; /* Laiendab menüü ühe rea peale suuremates seadmetes */
+                gap: 1.5rem;
+            }
+
+            .menu a {
+                font-size: 1.2em;
+            }
+
+            .dropdown-content {
+                min-width: 250px; /* Suuremate seadmete jaoks laiemaid rippmenüüde */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="dropdown">
+            <a href="https://sidisain.github.io/projektid.html">Projektid</a>
+            <div class="dropdown-content">
+                <!-- Dropdown links -->
+                <a href="https://sidisain.github.io/walkers.html">Walkers turundusmaterjalid</a>
+                <!-- Add more links here as needed -->
+            </div>
+        </div>
+        <a href="#">Liikuv graafika</a>
+        <div class="dropdown">
+            <a href="#">Tootefotod</a>
+            <div class="dropdown-content">
+                <a href="#">Valgel taustal</a>
+                <a href="#">Stiliseeritud fotod</a>
+                <a href="#">Elustiili fotod</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
