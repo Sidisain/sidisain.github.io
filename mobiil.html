@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Sidisain Veebileht</title>
+    <link rel="prefetch" href="tood/tood.html">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #001528; /* Tumeroheline sinine */
+            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Kattuvus suuremates seadmetes */
+            height: auto;
+            background-color: #003B5C; /* Tumesinine taust */
+            border-radius: 1rem; /* Väiksemad ümardatud nurgad mobiilis */
+            box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: #87CEFA; /* Heledam sinine tekst */
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #87CEFA; /* Heledam sinine tekst */
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            color: #c0ac8e; /* Hover-efekt */
+        }
+
+        .left-side, .right-side {
+            width: 100%; /* Täidab kogu konteineri laiusel */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .left-side p {
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 1.2em;
+            margin: 0;
+        }
+        
+        .right-side #html5-banner {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #html5-banner object {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            border-radius: 1rem;
+        }
+
+        .btn {
+            background-color: #87CEFA; 
+            color: #001528; /* Tumeroheline sinine */
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 1rem; /* Vahe nuppu ja teksti vahel */
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+        }
+
+        .btn:hover {
+            background-color: #c0ac8e; 
+            color: #001528;
+        }
+
+        #logo-animation {
+            width: 80%;
+            height: auto; /* Proportsioonide säilitamine */
+            display: flex;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;  
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Mobiilivaatest suuremates seadmetes muudame paigutuse veergudeks */
+            }
+
+            .left-side {
+                width: 50%;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .right-side {
+                width: 50%;
+                align-items: center;
+            }
+
+            .footer {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <!-- Lottie teek -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+</head>
+<body>
+    <div id="menu-placeholder"></div>
+    <div class="container">
+        <div class="left-side">
+            <div class="logo-container">
+                <div id="logo-animation"></div>
+            </div>
+            <p>
+               Tere tulemast Sidisain veebilehele! Meie kireks on logode ja brändingu, liikuva graafika, tootefotograafia ning graafilise disaini loomine, mis aitavad teie ettevõttel silma paista ja kliente juurde tuua. 
+                Pühendume detailidele ja loome visuaalseid lahendusi, mis toetavad teie äri kasvu ja eristavad teid konkurentidest.
+            </p>
+            <button class="btn">Projektid</button>
+        </div>
+        <div class="right-side">
+            <div id="html5-banner">
+                <object type="text/html" data="tood/tood.html"></object>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">Kontakt</a>
+        <a href="#">Minust</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Laadi menüü sisu
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-placeholder').innerHTML = data;
+                });
+
+            // Muutujad animatsiooni jälgimiseks
+            let animation = null;
+            let animationPath = '';
+
+            function loadAnimation() {
+                // Kontrolli, kas seade on portree režiimis
+                let newAnimationPath = window.matchMedia("(orientation: portrait)").matches 
+                    ? 'sidisainsuur.json' 
+                    : 'sidisain.json';
+
+                // Kui animatsioon on juba olemas ja tee ei ole muutunud, siis ei tee midagi
+                if (animation && animationPath === newAnimationPath) {
+                    return;
+                }
+
+                // Tühjenda vana animatsioon, kui olemas
+                if (animation) {
+                    animation.destroy(); // Lõpeta vana animatsioon
+                }
+
+                // Uuenda animatsiooni teed ja alusta uut animatsiooni
+                animationPath = newAnimationPath;
+
+                animation = lottie.loadAnimation({
+                    container: document.getElementById('logo-animation'), // konteiner
+                    renderer: 'svg',
+                    loop: true, // animatsiooni kordamine
+                    autoplay: true, // automaatne mängimine
+                    path: animationPath // animatsiooni JSON-faili asukoht
+                });
+
+                animation.addEventListener('data_failed', function() {
+                    console.error('Animatsiooni andmete laadimine ebaõnnestus.');
+                });
+
+                animation.addEventListener('DOMLoaded', function() {
+                    console.log('Animatsiooni andmed on laaditud.');
+                });
+
+                animation.addEventListener('complete', function() {
+                    // Mängi viimast kaadrit
+                    animation.goToAndStop(animation.totalFrames, true);
+                });
+            }
+
+            // Laadi animatsioon lehe laadimisel
+            loadAnimation();
+
+            // Kuula orientatsiooni muutusi
+            window.addEventListener('resize', loadAnimation);
+
+            // Laadi HTML-bänner asünkroonselt
+            function loadHtmlBanner() {
+                let bannerContainer = document.getElementById('html5-banner');
+                
+                // Kontrolli, kas bänner on juba olemas
+                if (bannerContainer.children.length === 0) {
+                    let objectElement = document.createElement('object');
+                    objectElement.type = 'text/html';
+                    objectElement.data = 'tood/tood.html';
+                    objectElement.width = '100%';
+                    objectElement.height = 'auto';
+                    bannerContainer.appendChild(objectElement);
+                }
+            }
+
+            // Laadi HTML-bänner pärast DOM täielikku laadimist
+            loadHtmlBanner();
+        });
+    </script>
+</body>
+</html>
