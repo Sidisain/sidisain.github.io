@@ -306,6 +306,80 @@
                 font-size: 1em;
             }
         }
+        @media (orientation: portrait) {
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                flex: 1; /* Võtab kogu vaba ruumi */
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Keskendab sisu vertikaalselt */
+            }
+
+            .menu a {
+                font-size: 0.9em !important; 
+                margin: 0 1rem !important;
+            }
+
+            .left-side, .right-side {
+                width: 100%; /* 100% laius */
+                padding: 0;
+                align-items: center; /* Keskjoondatud elemendid */
+            }
+
+            .footer {
+                position: relative; /* Võtame absoluutsest positsioonist välja */
+                margin-top: auto; /* Lükkab jaluse kõige alla */
+                background-color: #001528; /* Tume sinine taust */
+                padding: 1rem;
+                width: 100%;
+                display: flex;
+                justify-content: center; /* Keskjoondatud jaluse elemendid */
+            }
+
+            .footer a {
+                font-size: 0.9em; /* Väiksem font jaluses */
+                margin: 0 1rem;
+            }
+
+            .left-side p {
+                font-size: 1em; /* Väiksem font */
+                text-align: center; /* Tekst keskjoondatud */
+            }
+
+            .btn {
+                font-size: 1em; /* Väiksem nupp */
+                padding: 0.5rem 1rem; /* Väiksem padding nupul */
+                align-self: center; /* Keskjoondatud nupp */
+            }
+
+            #logo-animation {
+                width: 60vw; /* Muudame suurust väga kitsastel ekraanidel */
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            #html5-banner object {
+                width: 40vw;
+                height: auto;
+                border-radius: 1rem;
+            }
+    
+            #html5-banner {
+                display: flex;
+                justify-content: center;
+                width: 20vh;
+                height: auto;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+  /* Stiilid vertikaalses orientatsioonis olevatele seadmetele */
+}
     </style>
     <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
