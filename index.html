@@ -129,6 +129,25 @@
             justify-content: left;  
         }
         
+         /* Meedia päringud */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .left-side, .right-side {
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            .right-side {
+                padding: 1rem 0 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .left-side p {
                 font-size: 1em;
