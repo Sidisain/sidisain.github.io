@@ -9,164 +9,179 @@
     <title>Sidisain Veebileht</title>
     <link rel="prefetch" href="tood/tood.html">
     <style>
-        html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box; /* Kindlasti lisatud kogu lehe ulatuses */
-}
+       html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+        }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
+        body {
+            display: flex;
+            flex-direction: column;
+        }
 
-.suur {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #001528;
-    align-items: center; /* Muudetud keskseks, et vältida valgeid ääri */
-}
 
-.menu, .footer {
-    margin-left: 0; /* Muudetud, et vältida üleliigseid ääri */
-    margin-right: 0; /* Lisatud, et tagada, et ei jääks valgeid ääreid paremal */
-}
-
-.container {
-    flex: 1;
-    background-color: #003B5C;
-    border-radius: 2rem;
-    box-sizing: border-box;
-    padding: 0 1rem; /* Väiksem padding väiksematele ekraanidele */
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    max-width: 100%; /* Maksimaalne laius 100% */
-    margin: 0; /* Eemaldatud vasak ja parem margin */
-}
-
-.left-side, .right-side {
-    width: 100%; /* Laius 100% väiksematele ekraanidele */
-    display: flex;
-    flex-direction: column;
-}
-
-.left-side {
-    color: #ffffff;
-    padding: 0 0 0 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.left-side p {
-    font-weight: 300;
-    line-height: 1.6;
-    font-size: 1em; /* Väiksem font-size väiksematele ekraanidele */
-}
-
-.right-side {
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-
-#html5-banner {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-#html5-banner object {
-    max-width: 100%; /* Kohandatud väiksematele ekraanidele */
-    max-height: 20rem; /* Väiksem maksimaalne kõrgus väiksematele ekraanidele */
-    border: none;
-    border-radius: 3rem;
-}
-
-.btn {
-    background-color: #87CEFA;
-    color: #001528;
-    border: none;
-    border-radius: 3rem;
-    padding: 0.5rem 1rem; /* Väiksem padding väiksematele ekraanidele */
-    font-size: 0.9rem; /* Väiksem font-size väiksematele ekraanidele */
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 2rem;
-    align-self: flex-start;
-    font-weight: 700 !important;
-}
-
-.btn:hover {
-    background-color: #c0ac8e;
-    color: #001528;
-}
-
-#logo-animation {
-    width: 60vw; /* Väiksem logo suurus väiksematele ekraanidele */
-    height: auto; /* Auto kõrgus, et vältida deformatsioone */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/* Meedia päringud */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        padding: 1rem;
+        .suur {
+            width: 100%;
+            height: 100%;
+            padding: 0 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #001528; /* Tumeroheline sinine */
+            align-items: left;
+        }
+    .menu {
+        margin-left: 3rem !important;
     }
-
-    .left-side, .right-side {
-        width: 100%;
-        padding: 1rem 0;
+        .footer {
+        margin-left: 3rem !important;
     }
+        
+        .container {
+            flex: 1;
+            background-color: #003B5C; /* Tumesinine taust */
+            border-radius: 2rem; /* Ümardatud nurgad */
+            box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
+            padding: 0 5rem;
+            display: flex;
+            align-items: center;
+            position: relative; /* Animatsiooni paigutamiseks */
+            justify-content: center;
+            max-width: calc(100% - 6rem);
+            margin-left: 3rem;
+            
+        }
 
-    .right-side {
-        padding: 1rem 0 0;
-    }
-}
+        .left-side {
+            width: 50%; /* Vasaku poole ristküliku laius */
+            height: 100%;
+            color: #ffffff; /* Tekstivalge */
+            padding: 0 1rem 0 0; /* Eemaldame ülemise paddingu */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Joondamine algusesse */
+            align-items: flex-start;
+         
+        }
 
-@media (max-width: 768px) {
-    .left-side p {
-        font-size: 1em;
-    }
+        .left-side p {
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 300; /* Tavaline font */
+            line-height: 1.6; /* Ridade kõrgus */
+            font-size: 1.2em;
+        }
 
-    .btn {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
-    }
+        .right-side {
+            width: 50%; /* Parema poole ristküliku laius */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 0 1rem;
+        }
 
-    #html5-banner object {
-        max-width: 20rem;
-        max-height: 20rem;
-    }
-}
+        #html5-banner {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 1rem;
-    }
+        #html5-banner object {
+            max-width: 30rem;
+            max-height: 30rem;
+            border: none;
+            border-radius: 3rem;
+        }
 
-    .left-side p {
-        font-size: 0.9em;
-    }
+        .btn {
+            background-color: #87CEFA; 
+            color: #001528; /* Tumeroheline sinine */
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
+            align-self: flex-start; /* Vasakule joondatud */
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 700 !important; 
+        }
 
-    .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-    }
-}
+        .btn:hover {
+            background-color: #c0ac8e; 
+            color: #001528;
+        }
 
+        #logo-animation {
+            width: 40vw; /* Määrake konteineri suurus */
+            height: 100%; /* Kõrgus kogu ülejäänud konteiner */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alusta ülemisest äärest */
+        }
+
+        .logo-container {
+            justify-content: left;  
+        }
+        
+         /* Meedia päringud */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .left-side, .right-side {
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            .right-side {
+                padding: 1rem 0 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left-side p {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
+            }
+
+            #html5-banner object {
+                max-width: 20rem;
+                max-height: 20rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .left-side p {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+
+            #logo-animation {
+                width: 60vw;
+            }
+        }
     </style>
     <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
