@@ -7,78 +7,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Sidisain Veebileht</title>
-     <link rel="prefetch" href="tood/tood.html">
+    <link rel="prefetch" href="tood/tood.html">
     <style>
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            display: flex;
+            width: 100%;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
         }
 
         body {
-            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-	.suur {
-		width: 100%;
-    height: 100%;
-		padding: 0 3rem;
-            margin: 0;
-	 flex-direction: column;
+        .suur {
+            width: 100%;
+            height: 100%;
+            padding: 0 3rem;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: left;
             background-color: #001528; /* Tumeroheline sinine */
         }
 
-
         .container {
-         height: 100%;
-    width: 100%;
+            flex: 1;
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
-            padding: 0 5rem 0 5rem;
+            padding: 0 5rem;
             display: flex;
             align-items: center;
             position: relative; /* Animatsiooni paigutamiseks */
-        }
-
-        .footer {
-           
-            padding-bottom: 1rem;
-            padding-top: 1rem;
-            color: #87CEFA; /* Heledam sinine tekst */
-            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-        }
-        
-        .footer a {
-	position: relative;
-            color: #87CEFA; /* Heledam sinine tekst */
-            text-decoration: none;
-            margin-right: 3rem;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
-        
-        .footer a:hover {
-            color: #c0ac8e; /* Hover-efekt */
         }
 
         .left-side {
             width: 50%; /* Vasaku poole ristküliku laius */
             height: 100%;
             color: #ffffff; /* Tekstivalge */
-            padding: 0rem 2rem 0rem 0rem; /* Eemaldame ülemise paddingu */
+            padding: 0 2rem 0 0; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Joondamine algusesse */
-            position: relative; /* Absoluutse positsioonimise alus */
-            align-items: left;
-            justify-content: left;
-		margin-bottom: 5rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
         }
 
         .left-side p {
@@ -87,14 +61,14 @@
             line-height: 1.6; /* Ridade kõrgus */
             font-size: 1.2em;
         }
-        
+
         .right-side {
             width: 50%; /* Parema poole ristküliku laius */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-		padding: 0rem 0rem 0rem 2rem;
+            padding: 0 0 0 2rem;
         }
 
         #html5-banner {
@@ -138,11 +112,10 @@
             justify-content: center;
             align-items: flex-start; /* Alusta ülemisest äärest */
         }
+
         .logo-container {
             justify-content: left;  
         }
-
-
     </style>
     <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
@@ -167,18 +140,22 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <a href="#">Kontakt</a>
-        <a href="#">Minust</a>
-    </div>
+    <div id="footer-placeholder"></div>
 </div>
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
     // Laadi menüü sisu
     fetch('menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-placeholder').innerHTML = data;
+        });
+
+    // Laadi footer sisu
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
         });
 
     // Muutujad animatsiooni jälgimiseks
@@ -251,7 +228,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadHtmlBanner();
 });
 </script>
-
-
 </body>
 </html>
