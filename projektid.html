@@ -238,7 +238,7 @@
                 width: 60vw;
             }
         }
-     @media (orientation:portrait) {
+    
 @media (orientation: portrait) {
     .image-grid {
         flex-direction: column; /* Muuda paigutust veergudeks */
@@ -264,8 +264,9 @@
  
     .suur {
         width: 100%;
-        height: auto !important; /* Kõrgus kohandub automaatselt */
+        height: 100%; /* Kõrgus kohandub automaatselt */
         align-items: center;
+	    justify-content: flex-start;
     }
 
     .container {
@@ -324,8 +325,9 @@
       <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
     </div>
  </div>
-    </div>
+    
     <div id="footer-placeholder"></div>
+	</div>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
