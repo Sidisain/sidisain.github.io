@@ -34,13 +34,22 @@
             background-color: #001528; /* Tumeroheline sinine */
             align-items: left;
         }
-    .menu {
-        margin-left: 3rem !important;
-    }
+   
+         .menu, .footer {
+            margin-left: 3rem !important;
+            position: fixed;
+           
+            background-color: #001528;
+            z-index: 10;
+        }
+
+        .menu {
+            top: 0;
+        }
+
         .footer {
-        margin-left: 3rem !important;
-    }
-        
+            bottom: 0;
+        }
         .container {
            
             background-color: #003B5C; /* Tumesinine taust */
@@ -51,7 +60,8 @@
             flex-direction: column;
             justify-content: center;
             max-width: calc(100% - 6rem);
-		height: 100%;
+		overflow-y: auto;
+    height: calc(100% - 6rem);
             margin-left: 3rem;
 		display: flex;
       justify-content: center;
