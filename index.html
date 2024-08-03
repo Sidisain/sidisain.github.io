@@ -108,7 +108,7 @@
             font-weight: 500;
             cursor: pointer;
             margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
-            align-self: flex-start; /* Vasakule joondatud */
+            /* align-self: flex-start; /* pole vaja- üldjoondus on juba vasakule, aga hea nipp */
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700 !important; 
         }
@@ -202,7 +202,7 @@
           .left-side, .right-side {
         width: 100%; /* Muutke laius 100% */
         height: auto; /* Lisage kõrgus auto */
-        padding: 1rem 0;
+        padding: 0 0 2rem 0;
           align-items: center;    
     }
 
@@ -222,6 +222,7 @@
             margin-left: 0;
                 flex-direction: column !important;
                  align-items: center;
+                padding: 0 1rem 1rem 1rem;
             }
             #html5-banner object {
     max-width: 15rem;
