@@ -10,11 +10,10 @@
         }
 
         .menu {
-            position: absolute;
-            top: 1rem;
-            left: calc((100% - 100vw) / 2 + 4rem); /* Positsioneerime menüü heledama sinise ala peale */
+    
             display: flex;
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem
         }
 
         .menu a {
@@ -40,7 +39,7 @@
             display: none;
             position: absolute;
             z-index: 1;
-            padding: 0.5rem 0; /* Vähem paddingut, et linkide vahed oleksid õiged */
+            padding: 0.7rem 0; /* Vähem paddingut, et linkide vahed oleksid õiged */
             border-radius: 0.5rem; /* Veidi ümardatud nurgad */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Väike vari */
             min-width: 200px; /* Minimaalne laius */
@@ -49,12 +48,13 @@
         .dropdown-content a {
             background-color: transparent; /* Eemaldab taustavärvi */
             color: #87CEFA; /* Heledam sinine tekst */
-            padding: 0.5rem 1rem; /* Väiksem padding linkide ümber */
+            padding: 0.3rem 1rem !important; 
             margin-bottom: 0; /* Vähenenud vahe linkide vahel */
             text-decoration: none;
             display: block;
-            font-size: 1em; /* Linkide fondi suurus */
+            font-size: 0.9em !important; /* Linkide fondi suurus */
             border-radius: 0.25rem; /* Veidi ümardatud nurgad */
+          
         }
 
         .dropdown-content a:hover {
@@ -69,9 +69,7 @@
 </head>
 <body>
     <div class="menu">
-	    <div>
 	    <a href="https://sidisain.github.io/">Pealeht</a>
-	    </div>
         <div class="dropdown">
             <a href="https://sidisain.github.io/projektid.html">Projektid</a>
             <div class="dropdown-content">
@@ -99,7 +97,7 @@
                 <a href="https://sidisain.github.io/soomoreklaam.html">Soomo turundusmaterjalid</a>
             </div>
         </div>
-        <a href="#">Liikuv graafika</a>
+        <a href="https://sidisain.github.io/liikuv.html">Liikuv graafika</a>
         <div class="dropdown">
             <a href="#">Tootefotod</a>
             <div class="dropdown-content">
