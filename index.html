@@ -342,10 +342,6 @@
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Peida laadimise ekraan
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.display = 'none';
-
     // Jätka menüü ja footer sisu laadimist
     fetch('menu.html')
         .then(response => response.text())
@@ -425,9 +421,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Laadi HTML-bänner pärast DOM täielikku laadimist
-    loadHtmlBanner();
+    // Peida laadimise ekraan ja laadi HTML-bänner pärast kogu lehe täielikku laadimist
+    window.onload = function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+        loadHtmlBanner();
+    };
 });
+
 
 </script>
 </body>
