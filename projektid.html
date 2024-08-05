@@ -10,20 +10,19 @@
     <title>Sidisain Veebileht</title>
     <link rel="prefetch" href="tood/tood.html">
     <style>
-       html, body {
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
-	       overflow-x: hidden;
+            overflow-x: hidden;
         }
 
         body {
             display: flex;
             flex-direction: column;
         }
-
 
         .suur {
             width: 100%;
@@ -35,8 +34,8 @@
             background-color: #001528; /* Tumeroheline sinine */
             align-items: left;
         }
-   
-         .menu, .footer {
+
+        .menu, .footer {
             margin-left: 3rem !important;
             position: fixed;
             z-index: 10;
@@ -47,10 +46,10 @@
         }
 
         .footer {
-            bottom: 0 ;
+            bottom: 0;
         }
+
         .container {
-           
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
@@ -59,11 +58,9 @@
             flex-direction: column;
             justify-content: flex-start;
             max-width: calc(100% - 6rem);
-		overflow-y: auto;
-    height: calc(100% - 7.1rem);
+            overflow-y: auto;
+            height: calc(100% - 7.1rem);
             margin-left: 3rem;
-	
-            
         }
 
         .left-side {
@@ -75,34 +72,31 @@
             flex-direction: column;
             justify-content: flex-start; /* Joondamine algusesse */
             align-items: flex-start;
-         
         }
 
-.container {
-    
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #001528 #003B5C; /* Firefox */
-}
+        .container {
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #001528 #003B5C; /* Firefox */
+        }
 
-/* Webkit (Chrome, Safari) */
-.container::-webkit-scrollbar {
-    width: 12px;
-}
+        /* Webkit (Chrome, Safari) */
+        .container::-webkit-scrollbar {
+            width: 12px;
+        }
 
-.container::-webkit-scrollbar-track {
-    background: #003B5C; /* Taust */
-    border-radius: 20px;
-}
+        .container::-webkit-scrollbar-track {
+            background: #003B5C; /* Taust */
+            border-radius: 20px;
+        }
 
-.container::-webkit-scrollbar-thumb {
-    background-color: #001528; /* Kerimisriba värv */
-    border-radius: 20px;
-    border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
-}
-
+        .container::-webkit-scrollbar-thumb {
+            background-color: #001528; /* Kerimisriba värv */
+            border-radius: 20px;
+            border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
+        }
 
         .btn {
-            background-color: #87CEFA; 
+            background-color: #87CEFA;
             color: #001528; /* Tumeroheline sinine */
             border: none;
             border-radius: 3rem;
@@ -113,75 +107,64 @@
             margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
             /* align-self: flex-start; /* pole vaja- üldjoondus on juba vasakule, aga hea nipp */
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-            font-weight: 700 !important; 
+            font-weight: 700 !important;
         }
 
         .btn:hover {
-            background-color: #c0ac8e; 
+            background-color: #c0ac8e;
             color: #001528;
-}
-		/* Lisa see stiil oma CSS failile */
-
+        }
 
         .image-grid-container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .image-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .image-grid img {
-      width: calc(33.33% - 5rem); /* Increase the width of the images */
-      height: auto;
-      margin: 2rem;
-      transition: transform 0.2s ease;
-        border-radius: 1rem;
-	    overflow-clip-margin: content-box !important;
-    overflow: clip !important;
-    
-    
-    height: auto;
-      
-    }
-    
-    .image-grid img:hover {
-    	cursor: pointer;
-      transform: scale(1.1);
-    }
-         /* Meedia päringud */
-    
-@media (max-width: 1200px) {
-    
-             #html5-banner {
-            width: 25rem;
-            height: 25rem;
+            display: flex;
+            justify-content: center;
         }
 
-        #html5-banner object {
-            max-width: 25rem;
-            max-height: 25rem;
-            border: none;
-            border-radius: 2rem;
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-          
-    
+
+        .image-grid img {
+            width: calc(33.33% - 5rem); /* Increase the width of the images */
+            height: auto;
+            margin: 2rem;
+            transition: transform 0.2s ease;
+            border-radius: 1rem;
+            overflow-clip-margin: content-box !important;
+            overflow: clip !important;
+            height: auto;
+        }
+
+        .image-grid img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        /* Meedia päringud */
+        @media (max-width: 1200px) {
+            #html5-banner {
+                width: 25rem;
+                height: 25rem;
             }
-        @media (max-width: 768px) {
 
-            
+            #html5-banner object {
+                max-width: 25rem;
+                max-height: 25rem;
+                border: none;
+                border-radius: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
             .menu, .footer {
                 font-size: 0.7rem;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        margin-left: 0 !important;
-    
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                margin-left: 0 !important;
             }
-                
-        
+
             .left-side p {
                 font-size: 1em;
             }
@@ -191,40 +174,40 @@
                 padding: 0.6rem 1.5rem;
             }
 
-             #html5-banner {
-            width: 30rem;
-            height: 25rem;
-        }
+            #html5-banner {
+                width: 30rem;
+                height: 25rem;
+            }
 
-        #html5-banner object {
-            max-width: 25rem;
-            max-height: 25rem;
-            border: none;
-            border-radius: 2rem;
-        }
+            #html5-banner object {
+                max-width: 25rem;
+                max-height: 25rem;
+                border: none;
+                border-radius: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
-            
-             .menu, .footer {
+            .menu, .footer {
                 font-size: 0.7rem;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        margin-left: 0 t;
-    }
-            .suur {
-            width: 100%;
-            height: max-content;
-    
-        }
-            .container {
-                 flex-flow: wrap;
-                padding: 1rem;
-                 
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                margin-left: 0 t;
             }
-             .right-side {
-        padding: 1rem 0 0;
-    }
+
+            .suur {
+                width: 100%;
+                height: max-content;
+            }
+
+            .container {
+                flex-flow: wrap;
+                padding: 1rem;
+            }
+
+            .right-side {
+                padding: 1rem 0 0;
+            }
 
             .left-side p {
                 font-size: 0.9em;
@@ -239,99 +222,126 @@
                 width: 60vw;
             }
         }
-    
-@media (orientation: portrait) {
-    .image-grid {
-        flex-direction: column; /* Muuda paigutust veergudeks */
-    }
-    
-    .image-grid img {
-        width: 100%; /* Piltide laius täidab konteineri */
-        margin: 1rem 0; /* Väiksem vahe piltide vahel */
-    }
 
-  .menu, .footer {
-        position: static; /* Eemalda fixed positsioneerimine */
-        font-size: 0.7rem;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        margin: 0 auto; /* Keskita menüü ja jalus */
-        width: 100%; /* Täida kogu laius */
-        text-align: center; /* Keskita tekst */
-    }
+        @media (orientation: portrait) {
+            .image-grid {
+                flex-direction: column; /* Muuda paigutust veergudeks */
+            }
 
-  .menu a {
-	  padding: 0 0.5rem !important;
-  }
+            .image-grid img {
+                width: 100%; /* Piltide laius täidab konteineri */
+                margin: 1rem 0; /* Väiksem vahe piltide vahel */
+            }
 
- 
-    .suur {
-        width: 100%;
-        height: 100%; /* Kõrgus kohandub automaatselt */
-        align-items: center;
-	    justify-content: flex-start;
-    }
+            .menu, .footer {
+                position: static; /* Eemalda fixed positsioneerimine */
+                font-size: 0.7rem;
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                margin: 0 auto; /* Keskita menüü ja jalus */
+                width: 100%; /* Täida kogu laius */
+                text-align: center; /* Keskita tekst */
+            }
 
-    .container {
-        max-width: calc(100% - 1rem); /* Väiksem margin konteinerile */
-	    height: 100%;
-        margin-left: 0;
-        flex-direction: row;
-        align-items: center; /* Joonda sisu keskele */
-        padding: 0 1rem 1rem 1rem; /* Väiksem padding */
-    }
+            .menu a {
+                padding: 0 0.5rem !important;
+            }
 
+            .suur {
+                width: 100%;
+                height: 100%; /* Kõrgus kohandub automaatselt */
+                align-items: center;
+                justify-content: flex-start;
+            }
 
+            .container {
+                max-width: calc(100% - 1rem); /* Väiksem margin konteinerile */
+                height: 100%;
+                margin-left: 0;
+                flex-direction: row;
+                align-items: center; /* Joonda sisu keskele */
+                padding: 0 1rem 1rem 1rem; /* Väiksem padding */
+            }
+        }
 
- } 
+       #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #001528; /* Sinine taust */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Kõrgem kiht, et katta kogu leht */
+}
+
+/* Laadimise ikoon */
+#loading-icon {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #c0ac8e;
+    border-radius: 50%;
+    border-top: 5px solid #87CEFA;
+    animation: spin 2s linear infinite;
+}
+
+/* Pöörlemise animatsioon */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
     </style>
     <!-- Lottie teek -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
 </head>
 <body>
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+</div>
 <div class="suur">
     <div id="menu-placeholder"></div>
     
     <div class="container">
-         <div class="image-grid">
-      <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
-      <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
-      <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
+        <div class="image-grid">
+            <img src="pildid/walkers.jpg" alt="Logo mockup" onclick="location.href='walkers.html';">
+            <img src="pildid/foto.jpg" alt="Car24 logo mockup" onclick="location.href='foto.html';">
+            <img src="pildid/livinit.jpg" alt="Logo mockup" onclick="location.href='livinit.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
+            <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
+            <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
+            <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
+            <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
+            <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
+            <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
+            <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
+            <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
+            <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
+            <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
+        </div>
+        <div class="image-grid">
+            <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
+            <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
+            <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
+        </div>
     </div>
-	   <div class="image-grid">
-      <img src="pildid/kmock.jpg" alt="Logo mockup" onclick="location.href='kihulane.html';">
-      <img src="pildid/oamockup.jpg" alt="Car24 logo mockup" onclick="location.href='oakohv.html';">
-      <img src="pildid/h1.jpg" alt="Logo mockup" onclick="location.href='handles1.html';">
-    </div>
-<div class="image-grid">
-      <img src="pildid/kvkmockup.jpg" alt="Logo mockup" onclick="location.href='kvklogo.html';">
-      <img src="pildid/car24.jpg" alt="Car24 logo mockup" onclick="location.href='car24.html';">
-      <img src="pildid/sidisainmock.jpg" alt="Logo mockup" onclick="location.href='sidisain.html';">
-    </div>
-    <div class="image-grid">
-      <img src="pildid/soomomock.jpg" alt="Soomo logo" onclick="location.href='soomologo.html';">
-      <img src="pildid/ajakirimock.jpg" alt="Ettevõtte ajakiri" onclick="location.href='ajakiri.html';">
-      <img src="pildid/iluelabpostermock.jpg" alt="Ilu elab poster" onclick="location.href='iluelab.html';">
-    </div>
-    <div class="image-grid">
-      <img src="pildid/mobiili mockup.jpg" alt="Mobiili äpi mockup" onclick="location.href='taimeapp.html';">
-      <img src="pildid/postermock.png" alt="Postri mockup" onclick="location.href='poster.html';">
-      <img src="pildid/joulukaart.png" alt="Jõulukaardi mockup" onclick="location.href='joulukaart.html';">
-    </div>
-    <div class="image-grid">
-    <img src="pildid/maakodumock.jpg" alt="Ajakirja kaane mockup" onclick="location.href='maakodu.html';">
-      <img src="pildid/lauakalendermock.jpg" alt="Lauakalendri pilt" onclick="location.href='kalender.html';">
-      <img src="pildid/bons.jpg" alt="Bönsi küpsise pakk" onclick="location.href='bons.html';">
-    </div>
-    <div class="image-grid">
-    <img src="pildid/käijalamock.jpg" alt="Käi Jala kampaania mockup" onclick="location.href='kaijala.html';">
-      <img src="pildid/krunn.jpg" alt="Krunni pakendi pilt" onclick="location.href='krunn.html';">
-      <img src="pildid/soomorollup.jpg" alt="Rollupi mockup" onclick="location.href='soomoreklaam.html';">
-    </div>
- </div>
     
     <div id="footer-placeholder"></div>
-	</div>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -417,6 +427,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Laadi HTML-bänner pärast DOM täielikku laadimist
     loadHtmlBanner();
+
+    // Kontrolli, kas kõik pildid on laetud
+    const images = document.querySelectorAll('img');
+    let imagesLoaded = 0;
+
+    images.forEach(image => {
+        if (image.complete) {
+            imagesLoaded++;
+        } else {
+            image.addEventListener('load', () => {
+                imagesLoaded++;
+                if (imagesLoaded === images.length) {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }
+            });
+            image.addEventListener('error', () => {
+                imagesLoaded++;
+                if (imagesLoaded === images.length) {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }
+            });
+        }
+    });
+
+    // Kui kõik pildid on juba lehe laadimise hetkel laetud
+    if (imagesLoaded === images.length) {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
 });
 </script>
 </body>
