@@ -343,7 +343,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // Jätka menüü ja footer sisu laadimist
-    fetch('menu.html')
+    fetch('menuu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-placeholder').innerHTML = data;
