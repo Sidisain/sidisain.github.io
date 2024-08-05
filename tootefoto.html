@@ -80,7 +80,7 @@
             box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
             padding: 0 5rem;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: flex-start;
             max-width: calc(100% - 6rem);
             overflow-y: auto;
@@ -88,16 +88,7 @@
             margin-left: 3rem;
         }
 
-        .left-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
-            height: 100%;
-            color: #ffffff; /* Tekstivalge */
-            padding: 0 1rem 0 0; /* Eemaldame ülemise paddingu */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Joondamine algusesse */
-            align-items: flex-start;
-        }
+       
 
         .container {
             scrollbar-width: thin; /* Firefox */
@@ -140,32 +131,7 @@
             color: #001528;
         }
 
-        .image-grid-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .image-grid img {
-            width: calc(33.33% - 5rem); /* Increase the width of the images */
-            height: auto;
-            margin: 2rem;
-            transition: transform 0.2s ease;
-            border-radius: 1rem;
-            overflow-clip-margin: content-box !important;
-            overflow: clip !important;
-            height: auto;
-        }
-
-        .image-grid img:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-        }
+      
 
         /* Meedia päringud */
         @media (max-width: 1200px) {
