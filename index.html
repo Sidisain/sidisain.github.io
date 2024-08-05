@@ -245,26 +245,24 @@
         padding-right: 0.2rem;
         margin-left: 0 !important;
     }
-          .suur {
+       .suur {
         width: 100%;
         height: 100vh; /* Täida kogu ekraani kõrgus */
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between; /* Jagame ruumi ühtlaselt */
+        justify-content: flex-start; /* Joondame sisu algusesse */
+        overflow-y: auto; /* Luba vertikaalne kerimine */
     }
 
     .container {
-        width: 100%;
-        height: 100vh; /* Täida kogu ekraani kõrgus */
+        calc(100% - 1rem);
         padding: 1rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Muudame suuna vertikaalseks */
         align-items: center;
         justify-content: center;
-        overflow-y: auto; /* Luba vertikaalne kerimine */
     }
-         
             #html5-banner object {
     max-width: 15rem;
     max-height: 15rem;
