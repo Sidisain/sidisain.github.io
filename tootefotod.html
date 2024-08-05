@@ -139,13 +139,17 @@ body {
 @media (orientation: landscape) {
     .container {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: centert;
     }
 
     .left-side, .right-side, .kolmas {
         width: calc(33.33% - 5rem);
         height: 100%;
         padding: 0 1rem 0 0;
+	    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     }
 }
 
