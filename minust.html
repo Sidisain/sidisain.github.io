@@ -86,53 +86,10 @@
             justify-content: center;
             align-items: center;
             padding: 0 0 0 1rem;
+            color: #ffffff;
         }
 
-        #html5-banner {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        #html5-banner object {
-            max-width: 30rem;
-            max-height: 30rem;
-            border: none;
-            border-radius: 3rem;
-        }
-
-        .btn {
-            background-color: #87CEFA; 
-            color: #001528; /* Tumeroheline sinine */
-            border: none;
-            border-radius: 3rem;
-            padding: 0.8rem 2rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
-            /* align-self: flex-start; /* pole vaja- üldjoondus on juba vasakule, aga hea nipp */
-            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
-            font-weight: 700 !important; 
-        }
-
-        .btn:hover {
-            background-color: #c0ac8e; 
-            color: #001528;
-        }
-
-        #logo-animation {
-            width: 40vw; /* Määrake konteineri suurus */
-            height: 100%; /* Kõrgus kogu ülejäänud konteiner */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Alusta ülemisest äärest */
-        }
-
-        .logo-container {
-            justify-content: left;  
-        }
+     
 
         /* Laadimise ekraan */
 #loading-screen {
@@ -250,7 +207,11 @@
             }
         }
      @media (orientation:portrait) {
-
+         
+.portee {
+    max-width: 80%;
+    height: auto;
+}
             .menu a {
             padding: 0 0.5rem !important;
          
