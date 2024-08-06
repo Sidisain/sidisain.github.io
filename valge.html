@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <link rel="icon" href="pildid/favi.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Sidisain Veebileht</title>
+    <link rel="prefetch" href="tood/tood.html">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif; /* Põhifont kogu lehe jaoks */
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .suur {
+            width: 100%;
+            height: 100%;
+            padding: 0 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #001528; /* Tumeroheline sinine */
+            align-items: left;
+        }
+      
+      .left-side, .right-side, .kolmas {
+	      max-width: 90%;
+    height: auto;
+    color: #ffffff;
+    padding: 2rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.2em;
+   
+}
+	    h1 {
+		    font-size: 1.5em;
+	    }
+p {
+	 text-align: left;
+	max-width: 90%;
+	    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.img {
+    width: 90%;
+    height: auto;
+    margin: 2rem;
+    transition: transform 0.2s ease;
+    border-radius: rem;
+    overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+}
+
+        .menu, .footer {
+            margin-left: 3rem !important;
+            position: fixed;
+            z-index: 10;
+        }
+
+        .menu {
+            top: 0;
+        }
+
+        .footer {
+            bottom: 0;
+        }
+
+        .container {
+            background-color: #003B5C; /* Tumesinine taust */
+            border-radius: 2rem; /* Ümardatud nurgad */
+            box-sizing: border-box; /* Arvestame paddingut konteineri suuruses */
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: calc(100% - 6rem);
+            overflow-y: auto;
+            height: calc(100% - 7.1rem);
+            margin-left: 3rem;
+        }
+
+       
+
+        .container {
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #001528 #003B5C; /* Firefox */
+        }
+
+        /* Webkit (Chrome, Safari) */
+        .container::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #003B5C; /* Taust */
+            border-radius: 20px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #001528; /* Kerimisriba värv */
+            border-radius: 20px;
+            border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
+        }
+
+        .btn {
+            background-color: #87CEFA;
+            color: #001528; /* Tumeroheline sinine */
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 2rem; /* Vahe nuppu ja teksti vahel */
+            /* align-self: flex-start; /* pole vaja- üldjoondus on juba vasakule, aga hea nipp */
+            font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
+            font-weight: 700 !important;
+        }
+
+        .btn:hover {
+            background-color: #c0ac8e;
+            color: #001528;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            flex-direction: row;
+        }
+
+        .image-grid img {
+            width: calc(33.33% - 2rem); /* Increase the width of the images */
+            height: auto;
+            margin: 1rem;
+            
+            overflow-clip-margin: content-box !important;
+            overflow: clip !important;
+            height: auto;
+        }
+         /* Modalaken */
+         .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(250, 250, 250);
+            background-color: #001528ce;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 80%;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 80%;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: auto;
+        }
+
+        .modal-content, #caption {    
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+      
+
+        /* Meedia päringud */
+        @media (max-width: 1200px) {
+            #html5-banner {
+                width: 25rem;
+                height: 25rem;
+            }
+
+            #html5-banner object {
+                max-width: 25rem;
+                max-height: 25rem;
+                border: none;
+                border-radius: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu, .footer {
+                font-size: 0.7rem;
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                margin-left: 0 !important;
+            }
+
+            .left-side p {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
+            }
+
+            #html5-banner {
+                width: 30rem;
+                height: 25rem;
+            }
+
+            #html5-banner object {
+                max-width: 25rem;
+                max-height: 25rem;
+                border: none;
+                border-radius: 2rem;
+            }
+        }
+
+       
+
+        @media (orientation: portrait) {
+      .left-side, .right-side, .kolmas {
+    min-width: 90%;
+    flex-direction: column;
+    align-items: center;
+            
+}           
+.image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .image-grid img {
+            width: 90%; /* Increase the width of the images */
+            height: auto;
+            margin: 1rem;
+            
+            overflow-clip-margin: content-box !important;
+            overflow: clip !important;
+            height: auto;
+        }
+            .menu, .footer {
+                position: static; /* Eemalda fixed positsioneerimine */
+                font-size: 0.7rem;
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                margin: 0 auto; /* Keskita menüü ja jalus */
+                width: 100%; /* Täida kogu laius */
+                text-align: center; /* Keskita tekst */
+            }
+
+            .menu a {
+                padding: 0 0.5rem !important;
+            }
+
+            .suur {
+                width: 100%;
+                height: 100%; /* Kõrgus kohandub automaatselt */
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .container {
+                max-width: calc(100% - 1rem); /* Väiksem margin konteinerile */
+                height: 100%;
+                margin-left: 0;
+                flex-direction: column;
+                align-items: center; /* Joonda sisu keskele */
+                padding: 0 1rem 1rem 1rem; /* Väiksem padding */
+            }
+        }
+
+       #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #001528; /* Sinine taust */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Kõrgem kiht, et katta kogu leht */
+}
+
+/* Laadimise ikoon */
+#loading-icon {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #c0ac8e;
+    border-radius: 50%;
+    border-top: 5px solid #87CEFA;
+    animation: spin 2s linear infinite;
+}
+
+/* Pöörlemise animatsioon */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+    <!-- Lottie teek -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+</head>
+<body>
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+</div>
+<div class="suur">
+    <div id="menu-placeholder"></div>
+    
+    <div class="container">
+        <div class="left-side">
+          
+             
+          
+		<p>So Tuli lõhnaküünlad</p>
+		
+        </div>
+        <div class="image-grid">
+            <img src="pildid/stubakastamm.jpg" alt="lõhnaküünal" style="cursor:pointer">
+            <img src="pildid/sjasmiin.jpg" alt="lõhnaküünal" style="cursor:pointer">
+            <img src="pildid/ssidrunhein.jpg" alt="lõhnaküünal" style="cursor:pointer">
+            <img src="pildid/skarikakar.jpg" alt="lõhnaküünal" style="cursor:pointer">
+            <img src="pildid/smustikas.jpg" alt="lõhnaküünal" style="cursor:pointer">
+            <img src="pildid/Spiparmünt.jpg" alt="lõhnaküünal" style="cursor:pointer">
+        </div>
+      <div class="kolmas">
+        
+        
+      
+	      <p>So Tuli eeterlikud õlid</p>
+	      
+      </div>
+      <div class="image-grid">
+        <img src="pildid/KADAKAS.jpg" alt="eeterlik õli" style="cursor:pointer">
+        <img src="pildid/KANEEL.jpg" alt="eeterlik õli" style="cursor:pointer">
+        <img src="pildid/KASK.jpg" alt="eeterlik õli" style="cursor:pointer">
+        <img src="pildid/KOHV.jpg" alt="eeterlik õli" style="cursor:pointer">
+        <img src="pildid/LAVENDEL.jpg" alt="eeterlik õli" style="cursor:pointer">
+        <img src="pildid/LAIM.jpg" alt="eeterlik õli" style="cursor:pointer">
+    </div>
+        <div class="right-side">
+          
+          
+          
+		<p>Kiirgusvaba kodu seaded ja tarvikud</p>
+		
+        </div>
+        <div class="image-grid">
+            <img src="pildid/IMG_5091_websize.jpg" alt="seade" style="cursor:pointer">
+            <img src="pildid/IMG_5135_websize.jpg" alt="seade" style="cursor:pointer">
+            <img src="pildid/IMG_5151_websize.jpg" alt="seade" style="cursor:pointer">
+            <img src="pildid/IMG_5170_websize.jpg" alt="seade" style="cursor:pointer">
+            <img src="pildid/IMG_5213_websize.jpg" alt="seade" style="cursor:pointer">
+            <img src="pildid/IMG_5267_websize.jpg" alt="seade" style="cursor:pointer">
+        </div>
+        <div class="right-side">
+          
+          
+          
+            <p>Kassi kuju erinevatelt nurkadelt</p>
+            
+            </div>
+            <div class="image-grid">
+                <img src="pildid/KASSVALGETAUST.jpg" alt="Kuju" style="cursor:pointer">
+                <img src="pildid/KASSVALGETAUST1.jpg" alt="Kuju" style="cursor:pointer">
+                <img src="pildid/KASSVALGETAUST2.jpg" alt="Kuju" style="cursor:pointer">
+                <img src="pildid/KASSVALGETAUST3.jpg" alt="Kuju" style="cursor:pointer">
+                <img src="pildid/kass.jpg" alt="Kuju" style="cursor:pointer">
+                <img src="pildid/KASSVALGETAUST5.jpg" alt="Kuju" style="cursor:pointer">
+            </div>
+            <div class="right-side">
+          
+          
+          
+                <p>Laadijaots erinevatelt nurkadelt</p>
+                
+                </div>
+                <div class="image-grid">
+                    <img src="pildid/teravlaadija-DeNoiseAI-denoise.jpg" alt="laadija" style="cursor:pointer">
+                    <img src="pildid/teravlaadija1-DeNoiseAI-denoise.jpg" alt="laadija" style="cursor:pointer">
+                    <img src="pildid/teravlaadija2-DeNoiseAI-denoise (1).jpg" alt="laadija" style="cursor:pointer">
+                    <img src="pildid/teravlaadija3-DeNoiseAI-denoise.jpg" alt="laadija" style="cursor:pointer">
+                    <img src="pildid/teravlaadija4-DeNoiseAI-denoise.jpg" alt="laadija" style="cursor:pointer">
+                    <img src="pildid/teravlaadija5-DeNoiseAI-denoise.jpg" alt="laadija" style="cursor:pointer">
+                </div>
+                <div class="right-side">
+          
+          
+          
+                    <p>Saaremaa Lihatööstuse tooted</p>
+                    
+                    </div>
+                    <div class="image-grid">
+                        <img src="pildid/saaremaaliha.jpg" alt="lihatoode" style="cursor:pointer">
+                        <img src="pildid/saaremaalihat.jpg" alt="lihatoode" style="cursor:pointer">
+                        
+                    </div>
+    </div>
+    <div id="footer-placeholder"></div>
+	</div>
+     <!-- Modalaken -->
+     <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Laadi menüü sisu
+    fetch('menuu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-placeholder').innerHTML = data;
+        });
+
+    // Laadi footer sisu
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+    // Muutujad animatsiooni jälgimiseks
+    let animation = null;
+    let animationPath = '';
+
+    function loadAnimation() {
+        // Kontrolli, kas seade on portree režiimis
+        let newAnimationPath = window.matchMedia("(orientation: portrait)").matches 
+            ? 'sidisainsuur.json' 
+            : 'sidisain.json';
+
+        // Kui animatsioon on juba olemas ja tee ei ole muutunud, siis ei tee midagi
+        if (animation && animationPath === newAnimationPath) {
+            return;
+        }
+
+        // Tühjenda vana animatsioon, kui olemas
+        if (animation) {
+            animation.destroy(); // Lõpeta vana animatsioon
+        }
+
+        // Uuenda animatsiooni teed ja alusta uut animatsiooni
+        animationPath = newAnimationPath;
+
+        animation = lottie.loadAnimation({
+            container: document.getElementById('logo-animation'), // konteiner
+            renderer: 'svg',
+            loop: true, // animatsiooni kordamine
+            autoplay: true, // automaatne mängimine
+            path: animationPath // animatsiooni JSON-faili asukoht
+        });
+
+        animation.addEventListener('data_failed', function() {
+            console.error('Animatsiooni andmete laadimine ebaõnnestus.');
+        });
+
+        animation.addEventListener('DOMLoaded', function() {
+            console.log('Animatsiooni andmed on laaditud.');
+        });
+
+        animation.addEventListener('complete', function() {
+            // Mängi viimast kaadrit
+            animation.goToAndStop(animation.totalFrames, true);
+        });
+    }
+
+    // Laadi animatsioon lehe laadimisel
+    loadAnimation();
+
+    // Kuula orientatsiooni muutusi
+    window.addEventListener('resize', loadAnimation);
+
+    // Laadi HTML-bänner asünkroonselt
+    function loadHtmlBanner() {
+        let bannerContainer = document.getElementById('html5-banner');
+        
+        // Kontrolli, kas bänner on juba olemas
+        if (bannerContainer.children.length === 0) {
+            let objectElement = document.createElement('object');
+            objectElement.type = 'text/html';
+            objectElement.data = 'tood/tood.html';
+            objectElement.width = '500';
+            objectElement.height = '500';
+            bannerContainer.appendChild(objectElement);
+        }
+    }
+
+    // Laadi HTML-bänner pärast DOM täielikku laadimist
+    loadHtmlBanner();
+
+    // Kontrolli, kas kõik pildid on laetud
+    const images = document.querySelectorAll('img');
+    let imagesLoaded = 0;
+
+    images.forEach(image => {
+        if (image.complete) {
+            imagesLoaded++;
+        } else {
+            image.addEventListener('load', () => {
+                imagesLoaded++;
+                if (imagesLoaded === images.length) {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }
+            });
+            image.addEventListener('error', () => {
+                imagesLoaded++;
+                if (imagesLoaded === images.length) {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }
+            });
+        }
+    });
+
+    // Kui kõik pildid on juba lehe laadimise hetkel laetud
+    if (imagesLoaded === images.length) {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
+});
+</script>
+<script>
+    // Hangi modal
+    var modal = document.getElementById("myModal");
+
+    // Hangi modal sisu pilt ja caption
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    // Kõik pildid
+    var images = document.querySelectorAll('.image-grid img');
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Sulge modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
+</body>
+</html>
