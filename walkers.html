@@ -24,6 +24,7 @@
         }
 h1 {
 	font-size: 1.5em;
+  margin-top: 5rem;
 }
 p {
 	font-weight: 400;
@@ -60,17 +61,17 @@ p {
 		overflow-y: auto;
     height: calc(100% - 7.1rem);
             margin-left: 3rem;
-             align-items: center;
+             align-items: flex-start;
         }
 
         .left-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
+            width: 60%; /* Vasaku poole ristküliku laius */
             height: 100%;
             color: #ffffff; /* Tekstivalge */
             padding: 0 1.5rem 0 0; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
          
         }
@@ -78,12 +79,12 @@ p {
      
 
         .right-side {
-            width: 50%; /* Parema poole ristküliku laius */
+            width: 40%; /* Parema poole ristküliku laius */
             display: flex;
             flex-direction: column;
-            justify-content: top;
-            align-items: left;
-            padding: 0 0 0 1.5rem;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding 0 0 2rem 1.5rem;
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 300; /* Tavaline font */
             line-height: 1.6; /* Ridade kõrgus */
@@ -91,22 +92,22 @@ p {
             color: #ffffff; /* Tekstivalge */
         }
 
-       .container {
+       .kontainer {
             scrollbar-width: thin; /* Firefox */
             scrollbar-color: #001528 #003B5C; /* Firefox */
         }
 
         /* Webkit (Chrome, Safari) */
-        .container::-webkit-scrollbar {
+        .kontainer::-webkit-scrollbar {
             width: 12px;
         }
 
-        .container::-webkit-scrollbar-track {
+        .kontainer::-webkit-scrollbar-track {
             background: #003B5C; /* Taust */
             border-radius: 20px;
         }
 
-        .container::-webkit-scrollbar-thumb {
+        .kontainer::-webkit-scrollbar-thumb {
             background-color: #001528; /* Kerimisriba värv */
             border-radius: 20px;
             border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
@@ -125,6 +126,7 @@ p {
             font-family: 'Montserrat', sans-serif; /* Kasutame Montserrati fonti */
             font-weight: 700 !important; 
 		max-width: 8rem;
+    margin-bottom: 2rem;
         }
 
         .btn:hover {
@@ -135,7 +137,7 @@ p {
   .container {
 	
   position: relative;
-  max-width: 45rem;
+  max-width: 100%;
   
 }
 
@@ -154,7 +156,7 @@ p {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
@@ -199,6 +201,7 @@ p {
   background-color: #222;
   padding: 2px 16px;
   color: white;
+  
 }
 
 .row:after {
@@ -335,48 +338,23 @@ p {
         }
         }
 
-      /*  @media (max-width: 480px) {
-            
-             .menu, .footer {
-                font-size: 0.7rem;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        margin-left: 0 t;
-    }
-            .suur {
-            width: 100%;
-            height: max-content;
-    
-        }
-            .container {
-                 flex-flow: wrap;
-                padding: 1rem;
-                 
-            }
-             .right-side {
-        padding: 1rem 0 0;
-    }
-
-            .left-side p {
-                font-size: 0.9em;
-            }
-
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-
-            #logo-animation {
-                width: 60vw;
-            }
-        }
-	     */
+      
      @media (orientation:portrait) {
 
 	     p {
 		     text-align: center;
 	
 }
+
+    h1 {
+      margin-top: 0;
+      text-align:center
+    }
+.container1 {
+      	
+        margin:  0;
+       
+      }
             .menu a {
             padding: 0 0.5rem !important;
          
