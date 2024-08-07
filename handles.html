@@ -69,7 +69,7 @@ h2{
 		overflow-y: auto;
     height: calc(100% - 7.1rem);
             margin-left: 3rem;
-             align-items: center;
+             align-items: flex-start;
         }
 
         .left-side {
@@ -79,9 +79,8 @@ h2{
             padding: 0 1.5rem 0 0; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
-            justify-content: top;
+            justify-content: flex-start;
             align-items: flex-start;
-            
          
         }
 
@@ -89,7 +88,6 @@ h2{
 
         .right-side {
             width: 40%; /* Parema poole ristküliku laius */
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: top;
@@ -146,7 +144,7 @@ h2{
   .container {
 	
   position: relative;
-  max-width: 45rem;
+  max-width: 100%;
   
 }
 
@@ -354,23 +352,77 @@ h2{
         }
         }
 
-      
+      /*  @media (max-width: 480px) {
+            
+             .menu, .footer {
+                font-size: 0.7rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        margin-left: 0 t;
+    }
+            .suur {
+            width: 100%;
+            height: max-content;
+    
+        }
+            .container {
+                 flex-flow: wrap;
+                padding: 1rem;
+                 
+            }
+             .right-side {
+        padding: 1rem 0 0;
+    }
+
+            .left-side p {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+
+            #logo-animation {
+                width: 60vw;
+            }
+        }
+	     */
      @media (orientation:portrait) {
+      
+       /* Webkit (Chrome, Safari) */
+       .container::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #003B5C; /* Taust */
+            border-radius: 20px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #001528; /* Kerimisriba värv */
+            border-radius: 20px;
+            border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
+        }
 h1 {
     text-align: center;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
 	     p {
 		     text-align: center;
 	
 }
+.container1 {
+  margin-bottom: 0;
+}
             .menu a {
             padding: 0 0.5rem !important;
          
         }
           .left-side, .right-side {
-        width: 100%; 
+        width: 100%;  
         height: auto; /* Lisage kõrgus auto */
         padding: 0 0 2rem 0;
           align-items: center;    
@@ -397,11 +449,7 @@ h1 {
   width: 16.66%;
 }
 
-    #html5-banner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+   
 
      .menu, .footer {
                 font-size: 0.7rem;
@@ -437,11 +485,7 @@ h1 {
         
     
     }
-            #html5-banner object {
-    max-width: 15rem;
-    max-height: 15rem;
-    border-radius: 2rem;
-}
+
  } 
     </style>
     <!-- Lottie teek -->
@@ -462,102 +506,44 @@ h1 {
 
   <!-- Full-width images with number text -->
   <div class="mySlides">
-    <div class="numbertext">1 / 14</div>
-  <a href="pildid/kuu.jpg" data-lightbox="soomo">
-  <img src="pildid/kuu.jpg" style="width:100%" data-title="Image #1" class="lightbox-image">
-   </a>
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 14</div>
-<a href="pildid/kuu2.jpg"  data-lightbox="soomo">
-  <img src="pildid/kuu2.jpg" style="width:100%" data-title="Image #2" class="lightbox-image">
-  </a>
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 14</div>
-<a href="pildid/kuu3.jpg" data-lightbox="soomo">
-  <img src="pildid/kuu3.jpg" style="width:100%" data-title="Image #3" class="lightbox-image">
-  </a>
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">4 / 14</div>
-<a href="pildid/kuu4.jpg" data-lightbox="soomo">
-  <img src="pildid/kuu4.jpg" style="width:100%" data-title="Image #4" class="lightbox-image">
-  </a>
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 14</div>
-<a href="pildid/joulu1.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu1.jpg" style="width:100%" data-title="Image #5" class="lightbox-image">
-  </a>
-  </div>
-
-  <div class="mySlides">
-   <div class="numbertext">6 / 14</div>
-<a href="pildid/joulu2.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu2.jpg" style="width:100%" data-lightbox="soomo" data-title="Image #6" class="lightbox-image">
-  </a>
-  </div>
-    <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-  <a href="pildid/joulu3.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu3.jpg" style="width:100%" data-title="Image #7" class="lightbox-image">
+    <div class="numbertext">1 / 2</div>
+  <a href="pildid/h1.jpg" data-lightbox="soomo">
+  <img src="pildid/h1.jpg" style="width:100%" data-title="Image #1" class="lightbox-image">
    </a>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-<a href="pildid/joulu4.jpg"  data-lightbox="soomo">
-  <img src="pildid/joulu4.jpg" style="width:100%" data-title="Image #8" class="lightbox-image">
+<a href="pildid/h2.jpg"  data-lightbox="soomo">
+  <img src="pildid/h2.jpg" style="width:100%" data-title="Image #2" class="lightbox-image">
   </a>
   </div>
-
-  <div class="mySlides">
+ <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-<a href="pildid/joulu5.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu5.jpg" style="width:100%" data-title="Image #9" class="lightbox-image">
+<a href="pildid/h3.jpg"  data-lightbox="soomo">
+  <img src="pildid/h3.jpg" style="width:100%" data-title="Image #3" class="lightbox-image">
   </a>
   </div>
-
-  <div class="mySlides">
+ <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-<a href="pildid/joulu6.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu6.jpg" style="width:100%" data-title="Image #10" class="lightbox-image">
+<a href="pildid/h4.jpg"  data-lightbox="soomo">
+  <img src="pildid/h4.jpg" style="width:100%" data-title="Image #4" class="lightbox-image">
   </a>
   </div>
-
-  <div class="mySlides">
+ <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-<a href="pildid/joulu7.jpg" data-lightbox="soomo">
-  <img src="pildid/joulu7.jpg" style="width:100%" data-title="Image #11" class="lightbox-image">
+<a href="pildid/h5.jpg"  data-lightbox="soomo">
+  <img src="pildid/h5.jpg" style="width:100%" data-title="Image #5" class="lightbox-image">
+  </a>
+  </div>
+ <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+<a href="pildid/h6.jpg"  data-lightbox="soomo">
+  <img src="pildid/h6.jpg" style="width:100%" data-title="Image #6" class="lightbox-image">
   </a>
   </div>
 
-  <div class="mySlides">
-   <div class="numbertext">6 / 6</div>
-<a href="pildid/2kuu.jpg" data-lightbox="soomo">
-  <img src="pildid/2kuu.jpg" style="width:100%" data-lightbox="soomo" data-title="Image #12" class="lightbox-image">
-  </a>
-  </div>
-        <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-<a href="pildid/2kuu2.jpg" data-lightbox="soomo">
-  <img src="pildid/2kuu2.jpg" style="width:100%" data-title="Image #13" class="lightbox-image">
-  </a>
-  </div>
-
-  <div class="mySlides">
-   <div class="numbertext">6 / 6</div>
-<a href="pildid/2kuu3.jpg" data-lightbox="soomo">
-  <img src="pildid/2kuu3.jpg" style="width:100%" data-lightbox="soomo" data-title="Image #14" class="lightbox-image">
-  </a>
-  </div>
-
-
+  
 <!-- Next and previous buttons -->
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -566,57 +552,23 @@ h1 {
 
 <!-- Thumbnail images -->
 <div class="row">
-  <div class="column">
-   <img class="demo cursor" src="pildid/kuu.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+ <div class="column">
+  <img class="demo cursor" src="pildid/h1.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+ </div>
+ <div class="column">
+  <img class="demo cursor" src="pildid/h2.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
   </div>
-  <div class="column">
-   <img class="demo cursor" src="pildid/kuu2.png" style="width:100%" onclick="currentSlide(2)" alt="">
-   </div>
-   <div class="column">
-   <img class="demo cursor" src="pildid/kuu3.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+ <div class="column">
+  <img class="demo cursor" src="pildid/h3.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
   </div>
-   <div class="column">
-   <img class="demo cursor" src="pildid/kuu4.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
-   </div>
-  <div class="column">
-   <img class="demo cursor" src="pildid/joulu1.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
-   </div>
-   <div class="column">
-   <img class="demo cursor" src="pildid/joulu2.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
-</div>
-</div>
-
-
- <div class="row">
-   <div class="columntwo">
-   <img class="demo cursor" src="pildid/joulu3.jpg" style="width:100%" onclick="currentSlide(7)" alt="">
-   </div>
-   <div class="columntwo">
-    <img class="demo cursor" src="pildid/joulu4.jpg" style="width:100%" onclick="currentSlide(8)" alt="">
-   </div>
-    <div class="columntwo">
-   <img class="demo cursor" src="pildid/joulu5.jpg" style="width:100%" onclick="currentSlide(9)" alt="">
-   </div>
-   <div class="columntwo">
-    <img class="demo cursor" src="pildid/joulu6.jpg" style="width:100%" onclick="currentSlide(10)" alt="">
-   </div>
-    <div class="columntwo">
-   <img class="demo cursor" src="pildid/joulu7.jpg" style="width:100%" onclick="currentSlide(11)" alt="">
-   </div>
-   <div class="columntwo">
-    <img class="demo cursor" src="pildid/2kuu.jpg" style="width:100%" onclick="currentSlide(12)" alt="">
-   </div>
-</div>
-
-<div class="row">
-   <div class="columnthree">
-   <img class="demo cursor" src="pildid/2kuu1.jpg" style="width:100%" onclick="currentSlide(13)" alt="">
-   </div>
-   <div class="columnthree">
-    <img class="demo cursor" src="pildid/2kuu2.jpg" style="width:100%" onclick="currentSlide(14)" alt="">
-   </div>
-<div class="columnthree">
-    <img class="demo cursor" src="pildid/2kuu3.jpg" style="width:100%" onclick="currentSlide(15)" alt="">
+ <div class="column">
+  <img class="demo cursor" src="pildid/h4.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+  </div>
+ <div class="column">
+  <img class="demo cursor" src="pildid/h5.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+  </div>
+ <div class="column">
+  <img class="demo cursor" src="pildid/h6.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
   </div>
 </div>
 </div>
@@ -630,15 +582,16 @@ h1 {
 </div>
 <div class="right-side">
 
-  <h1>OA kohv</h1>
-	
-	
-  <p>Turundumaterjalid OA Kohvile</p>
+<h1>Handles logo, pakend ja turundusmaterjalid</h1>
+
+
+
+      <p>Logo ja prindi materjalide disain Handles küünalde brändile</p>
      
      
-<div>    
-<button class="btn" onclick="location.href='kihulane.html';">Eelmine</button>
-<button class="btn" onclick="location.href='handles.html';">Järgmine</button>
+   <div> 
+<button class="btn" onclick="location.href='oakohv.html';">Eelmine</button>
+<button class="btn" onclick="location.href='kvklogo.html';">Järgmine</button>
 </div>
 
 </div>

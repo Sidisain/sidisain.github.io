@@ -24,6 +24,7 @@
         }
 h1 {
 	font-size: 1.5em;
+  margin-top: 5rem ;
 }
 p {
 	font-weight: 400;
@@ -51,10 +52,9 @@ h2{
         .footer {
         margin-left: 3rem !important;
     }
-        .portee {
-    max-height: 70vh;
+   
 		
-}
+
         .kontainer {
             background-color: #003B5C; /* Tumesinine taust */
             border-radius: 2rem; /* Ümardatud nurgad */
@@ -71,21 +71,23 @@ h2{
         }
 
         .left-side {
-            width: 50%; /* Vasaku poole ristküliku laius */
+            width: 60%; /* Vasaku poole ristküliku laius */
             height: 100%;
             color: #ffffff; /* Tekstivalge */
             padding: 0 1.5rem 0 0; /* Eemaldame ülemise paddingu */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
+            padding-bottom: 5rem;
          
         }
 
      
 
         .right-side {
-            width: 50%; /* Parema poole ristküliku laius */
+            width: 40%; /* Parema poole ristküliku laius */
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: top;
@@ -98,22 +100,22 @@ h2{
             color: #ffffff; /* Tekstivalge */
         }
 
-       .container {
+       .kontainer {
             scrollbar-width: thin; /* Firefox */
             scrollbar-color: #001528 #003B5C; /* Firefox */
         }
 
         /* Webkit (Chrome, Safari) */
-        .container::-webkit-scrollbar {
+        .kontainer::-webkit-scrollbar {
             width: 12px;
         }
 
-        .container::-webkit-scrollbar-track {
+        .kontainer::-webkit-scrollbar-track {
             background: #003B5C; /* Taust */
             border-radius: 20px;
         }
 
-        .container::-webkit-scrollbar-thumb {
+        .kontainer::-webkit-scrollbar-thumb {
             background-color: #001528; /* Kerimisriba värv */
             border-radius: 20px;
             border: 3px solid #003B5C; /* Riba ääris, et sobituks taustaga */
@@ -142,7 +144,7 @@ h2{
   .container {
 	
   position: relative;
-  max-width: 45rem;
+  max-width: 100%;
   
 }
 
@@ -342,45 +344,11 @@ h2{
         }
         }
 
-      /*  @media (max-width: 480px) {
-            
-             .menu, .footer {
-                font-size: 0.7rem;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        margin-left: 0 t;
-    }
-            .suur {
-            width: 100%;
-            height: max-content;
-    
-        }
-            .container {
-                 flex-flow: wrap;
-                padding: 1rem;
-                 
-            }
-             .right-side {
-        padding: 1rem 0 0;
-    }
-
-            .left-side p {
-                font-size: 0.9em;
-            }
-
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-
-            #logo-animation {
-                width: 60vw;
-            }
-        }
-	     */
+   
      @media (orientation:portrait) {
 h1 {
     text-align: center;
+    margin-top: 0;
   }
 
 	     p {
@@ -392,11 +360,11 @@ h1 {
          
         }
           .left-side, .right-side {
-        width: 100%;  Muutke laius 100% */
+        width: 100%; 
         height: auto; /* Lisage kõrgus auto */
         padding: 0 0 2rem 0;
           align-items: center;    
-    }
+         
          .right-side {
              display: flex;
         justify-content: center; /* Vertikaalne joondamine keskele */
